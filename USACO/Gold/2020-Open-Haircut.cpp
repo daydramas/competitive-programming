@@ -71,7 +71,7 @@ int main() {
 		ans[m] = ans[m + 1] + diff;
 
 	}
-// output
+	// output
 	for (int i = 0; i < N; i++) fout << ans[i] << endl;
 	return 0;
 }
