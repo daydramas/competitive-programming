@@ -1,9 +1,3 @@
-/*
- ID: dongliu3
- TASK: treeboxes
- LANG: C++
- */
-
 #include "grader.h"
 using namespace std;
 
