@@ -1,8 +1,8 @@
 # Competitive Programming Solutions, Templates, and Datastructures
 
 #### USACO Gold:
-| Contest Date | Problem Name | Score | Solution Notes | 
+| Contest Date | Problem Name | Solution Notes | Score |
 | -------------- | ------------ | -------------- | -------------- |
-| 2010/Jan | [Taking Turns](USACO/Gold/2010-Jan-hayturn.cpp) | AC | DP |
-| 2012/Nov | [Balanced Cow Breeds](USACO/Gold/2012-Jan-bbreeds.cpp) | AC | DP |
-| 2020/Open | [Haircut](USACO/Gold/2020-Open-haircut.cpp) | 12/13 | BIT |
+| 2010/Jan | [Taking Turns](USACO/Gold/2010-Jan-hayturn.cpp) | DP | AC |
+| 2012/Nov | [Balanced Cow Breeds](USACO/Gold/2012-Jan-bbreeds.cpp) | DP | AC |
+| 2020/Open | [Haircut](USACO/Gold/2020-Open-haircut.cpp) | BIT | 12/13 |
