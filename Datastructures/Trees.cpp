@@ -2,7 +2,7 @@ struct tree {
 
 	int n, logN;
 	vector<vector<int> > adj, lca;
-	vector<int> sz, depth;
+	vector<int> sz, depth; 
 
 	tree(int n_) {
 		n = n_;
