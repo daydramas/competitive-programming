@@ -61,4 +61,11 @@ struct tree {
 	int getDist(int a, int b) {
 		return depth[a]+depth[b]-(2*depth[LCA(a, b)]);
 	}
+	
+	int getCentroid(int source, int parent, int size) {
+		for (int child : adj[source]) 
+			if (source != parent && sz[child] > n/2) return getCentroid(child, source, size);
+		return source;
+	}
+	
 };
