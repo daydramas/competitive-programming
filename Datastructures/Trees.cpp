@@ -2,7 +2,7 @@ struct tree {
 
 	int n, logN;
 	vector<vector<int> > adj, lca;
-	vector<int> sz, depth; 
+	vector<int> sz, depth;
 
 	tree(int n_) {
 		n = n_;
@@ -61,11 +61,25 @@ struct tree {
 	int getDist(int a, int b) {
 		return depth[a]+depth[b]-(2*depth[LCA(a, b)]);
 	}
-	
+
 	int getCentroid(int source, int parent, int size) {
-		for (int child : adj[source]) 
+		for (int child : adj[source])
 			if (source != parent && sz[child] > n/2) return getCentroid(child, source, size);
 		return source;
 	}
 	
+	int centroidDecomp(int source) {
+		int centroid = getCentroid(source, source, sz[source]);
+		for (int child : adj[centroid]) {
+			adj[child].erase(find(adj[child].begin(),adj[child].end(), centroid));
+		}
+		
+		// do whatever you need to do
+		
+		for (int child : adj[centroid]) {
+			adj[centroidDecomp(child)] = centroid;
+		}
+		return centroid;
+	}
+
 };
