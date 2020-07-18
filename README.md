@@ -1,6 +1,6 @@
 # Competitive Programming Solutions, Templates, and Datastructures
 
-####USACO Gold:
+#### USACO Training:
 | Contest Date | Problem Name | Solution Notes |
 | -------------- | ------------ | -------------- |
-| 2010/Jan | [Taking Turns] | DP |
+| 2010/Jan | Taking Turns | DP |
