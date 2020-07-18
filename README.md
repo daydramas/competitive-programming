@@ -3,4 +3,4 @@
 #### USACO Training:
 | Contest Date | Problem Name | Solution Notes |
 | -------------- | ------------ | -------------- |
-| 2010/Jan | [Taking Turns][1.5.1] | DP |
+| 2010/Jan | [Taking Turns](USACO/Gold/2010-Jan-hayturn.cpp) | DP |
