@@ -1,7 +1,13 @@
 # Solutions, Templates, and Datastructures
 
-### Codeforcds:
+### Codeforces: [![Codeforces][codeforces-badge]][codeforces-link]
 
+[codeforces-badge]: https://img.shields.io/badge/codeforces-dongliu0426-blue?logo=codeforces
+[codeforces-link]: https://codeforces.com/profile/dongliu0426
+
+| Contest | Problem Name | Solution Notes
+| -------------- | ------------ | -------------- |
+| 1375 | [Sign Flipping](Codeforces/1375A-Sign-Flipping.cpp) | DP |
 
 ### USACO Gold:
 | Contest Date | Problem Name | Solution Notes | Score |
