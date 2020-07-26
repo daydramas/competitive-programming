@@ -22,3 +22,4 @@
 | -------------- | ------------ | -------------- | -------------- |
 | 2017/Jan | [Promotion Counting](USACO/Platinum/2017-Jan-promote.cpp) | DFS, BIT | AC |
 | 2019/Open | [Tree Boxes](USACO/Platinum/2019-Open-treeboxes.cpp) | DFS, LCA | AC |
+| 2019/Dec | [Greedy Pie Eaters](USACO/Platinum/2019-Dec-pieaters.cpp) | DP | AC |
