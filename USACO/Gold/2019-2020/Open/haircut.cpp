@@ -1,3 +1,9 @@
+/*
+ ID: dongliu3
+ TASK: haircut
+ LANG: C++
+ */
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -52,9 +58,11 @@ int main() {
 		for (int i = N; i >= 1; i--) {
 			long long q = sum(nhair[i]);
 			tans += q;
+//			cout << q << endl;
 			update(nhair[i] + 1, 1);
 
 		}
+//		cout << tans << endl;
 		ans[m] = tans;
 	}
 	for (int i = 1; i <= N; i++)
@@ -67,11 +75,15 @@ int main() {
 		for (int W : where[m]) {
 			int val = sum(W);
 			diff -= val;
+//			cout << "diff -= " << val << endl;
+
 		}
 		ans[m] = ans[m + 1] + diff;
+//		cout << endl;
 
 	}
-	// output
-	for (int i = 0; i < N; i++) fout << ans[i] << endl;
+// output
+	for (int i = 0; i < N; i++)
+		fout << ans[i] << endl;
 	return 0;
 }

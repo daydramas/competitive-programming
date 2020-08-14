@@ -25,6 +25,7 @@
         "unordered_set": "cpp",
         "utility": "cpp",
         "valarray": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "filesystem": "cpp"
     }
 }
