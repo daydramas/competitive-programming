@@ -27,5 +27,7 @@
         "valarray": "cpp",
         "vector": "cpp",
         "filesystem": "cpp"
-    }
+    },
+    "code-runner.runInTerminal": true,
+    "editor.minimap.enabled": false
 }
