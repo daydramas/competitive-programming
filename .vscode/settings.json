@@ -31,5 +31,8 @@
         "__bit_reference": "cpp"
     },
     "code-runner.runInTerminal": true,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "files.exclude": {
+        ".vscode": true
+    }
 }
