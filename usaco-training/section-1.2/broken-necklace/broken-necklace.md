@@ -1,8 +1,8 @@
-## Problem (beads)
+# Problem \(beads\)
 
-You have a necklace of N red, white, or blue beads (3<=N<=350) some of which are red, others blue, and others white, arranged at random. Here are two examples for n=29:
+You have a necklace of N red, white, or blue beads \(3&lt;=N&lt;=350\) some of which are red, others blue, and others white, arranged at random. Here are two examples for n=29:
 
-```
+```text
                 1 2                               1 2
             r b b r                           b r r b
           r         b                       b         b
@@ -27,11 +27,11 @@ The beads considered first and second in the text that follows have been marked 
 
 The configuration in Figure A may be represented as a string of b's and r's, where b represents a blue bead and r represents a red one, as follows: `brbrrrbbbrrrrrbrrbbrbbbbrrrrb`.
 
-Suppose you are to break the necklace at some point, lay it out straight, and then collect beads of the same color from one end until you reach a bead of a different color, and do the same for the other end (which might not be of the same color as the beads collected before this).
+Suppose you are to break the necklace at some point, lay it out straight, and then collect beads of the same color from one end until you reach a bead of a different color, and do the same for the other end \(which might not be of the same color as the beads collected before this\).
 
 Determine the point where the necklace should be broken so that the most number of beads can be collected.
 
-#### Example
+## Example
 
 For example, for the necklace in Figure A, 8 beads can be collected, with the breaking point either between bead 9 and bead 10 or else between bead 24 and bead 25.
 
@@ -39,35 +39,35 @@ In some necklaces, white beads had been included as shown in Figure B above. Whe
 
 Write a program to determine the largest number of beads that can be collected from a supplied necklace.
 
-#### PROGRAM NAME: beads
+## PROGRAM NAME: beads
 
-#### INPUT FORMAT
+## INPUT FORMAT
 
-* Line 1:	N, the number of beads
-* Line 2:	a string of N characters, each of which is r, b, or w
+* Line 1:    N, the number of beads
+* Line 2:    a string of N characters, each of which is r, b, or w
 
-#### SAMPLE INPUT (file beads.in)
+## SAMPLE INPUT \(file beads.in\)
 
-```
+```text
 29
 wwwbbrwrbrbrrbrbrwrwwrbwrwrrb
 ```
 
-#### OUTPUT FORMAT
+## OUTPUT FORMAT
 
 A single line containing the maximum of number of beads that can be collected from the supplied necklace.
 
-#### SAMPLE OUTPUT (file beads.out)
+## SAMPLE OUTPUT \(file beads.out\)
 
-```
+```text
 11
 ```
 
-#### OUTPUT EXPLANATION
+## OUTPUT EXPLANATION
 
-Consider two copies of the beads (kind of like being able to runaround the ends). The string of 11 is marked.
+Consider two copies of the beads \(kind of like being able to runaround the ends\). The string of 11 is marked.
 
-```
+```text
                 Two necklace copies joined here
                              v
 wwwbbrwrbrbrrbrbrwrwwrbwrwrrb|wwwbbrwrbrbrrbrbrwrwwrbwrwrrb
@@ -77,3 +77,4 @@ wwwbbrwrbrbrrbrbrwrwwrbwrwrrb|wwwbbrwrbrbrrbrbrwrwwrbwrwrrb
 
                         5+6 = 11 total
 ```
+
