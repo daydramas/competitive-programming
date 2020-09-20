@@ -1,2 +1,0 @@
-# Palindromic Squares
-
