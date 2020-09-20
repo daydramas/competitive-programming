@@ -26,7 +26,9 @@
         "utility": "cpp",
         "valarray": "cpp",
         "vector": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "forward_list": "cpp",
+        "__bit_reference": "cpp"
     },
     "code-runner.runInTerminal": true,
     "editor.minimap.enabled": false
