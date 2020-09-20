@@ -1,4 +1,4 @@
-# Solution (ride.cpp)
+# Solution (ride)
 ```cpp
 /*
  ID: dongliu3

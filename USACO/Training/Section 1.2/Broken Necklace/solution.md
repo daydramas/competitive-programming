@@ -1,4 +1,4 @@
-# Solution (beads.cpp)
+# Solution (beads)
 ```cpp
 /*
  ID: dongliu3

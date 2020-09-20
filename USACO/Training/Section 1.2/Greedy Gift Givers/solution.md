@@ -1,4 +1,4 @@
-# Solution (gift1.cpp)
+# Solution (gift1)
 ```cpp
   
 /*

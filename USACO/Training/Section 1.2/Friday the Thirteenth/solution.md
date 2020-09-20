@@ -1,4 +1,4 @@
-# Solution (friday.cpp)
+# Solution (friday)
 ```cpp
 /*
  ID: dongliu3
