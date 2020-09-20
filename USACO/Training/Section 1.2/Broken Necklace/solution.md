@@ -1,4 +1,4 @@
-# Solution to Broken Necklace
+# Solution (beads.cpp)
 ```cpp
 /*
  ID: dongliu3

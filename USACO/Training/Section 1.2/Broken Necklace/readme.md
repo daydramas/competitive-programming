@@ -1,4 +1,4 @@
-## Broken Necklace
+## Problem (necklace)
 
 You have a necklace of N red, white, or blue beads (3<=N<=350) some of which are red, others blue, and others white, arranged at random. Here are two examples for n=29:
 

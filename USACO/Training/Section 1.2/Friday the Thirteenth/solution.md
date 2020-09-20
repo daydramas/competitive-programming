@@ -1,4 +1,4 @@
-# Solution to Friday the Thirteenth
+# Solution (friday.cpp)
 ```cpp
 /*
  ID: dongliu3

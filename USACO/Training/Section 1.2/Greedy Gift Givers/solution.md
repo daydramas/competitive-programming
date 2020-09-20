@@ -1,4 +1,4 @@
-# Solution to Greedy Gift Givers
+# Solution (gift1.cpp)
 ```cpp
   
 /*

@@ -1,4 +1,4 @@
-## Friday the Thirteenth
+## Problem (friday)
 
 Is Friday the 13th really an unusual event?
 
