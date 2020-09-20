@@ -1,4 +1,4 @@
-## Problem (friday)
+# Problem \(friday\)
 
 Is Friday the 13th really an unusual event?
 
@@ -10,29 +10,32 @@ There are few facts you need to know before you can solve this problem:
 
 * January 1, 1900 was on a Monday.
 * Thirty days has September, April, June, and November, all the rest have 31 except for February which has 28 except in leap years when it has 29.
-* Every year evenly divisible by 4 is a leap year (1992 = 4*498 so 1992 will be a leap year, but the year 1990 is not a leap year)
+* Every year evenly divisible by 4 is a leap year \(1992 = 4\*498 so 1992 will be a leap year, but the year 1990 is not a leap year\)
 * The rule above does not hold for century years. Century years divisible by 400 are leap years, all other are not. Thus, the century years 1700, 1800, 1900 and 2100 are not leap years, but 2000 is a leap year.
 
 Do not use any built-in date functions in your computer language.
 
 Don't just precompute the answers, either, please.
 
-#### PROGRAM NAME: friday
+## PROGRAM NAME: friday
 
-#### INPUT FORMAT
+## INPUT FORMAT
 
 One line with the integer N.
 
-#### SAMPLE INPUT (file friday.in)
-```
+## SAMPLE INPUT \(file friday.in\)
+
+```text
 20
 ```
 
-#### OUTPUT FORMAT
+## OUTPUT FORMAT
 
 Seven space separated integers on one line. These integers represent the number of times the 13th falls on Saturday, Sunday, Monday, Tuesday, ..., Friday.
 
-#### SAMPLE OUTPUT (file friday.out)
-```
+## SAMPLE OUTPUT \(file friday.out\)
+
+```text
 36 33 34 33 35 35 34
 ```
+
