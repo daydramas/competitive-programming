@@ -1,6 +1,6 @@
 /*
  ID: dongliu3
- TASK: fence8
+ TASK: cryptcow
  LANG: C++
  */
 
@@ -18,8 +18,8 @@ using namespace std;
 #define DBG2(x,y) cout <<#x<<": "<<x<<" | "<<#y<<": "<<y<<endl;
 
 #define pb push_back
-#define F first
-#define S second
+#define X first
+#define Y second
 #define mp make_pair
 #define sz(a) int((a).size())
 #define all(x) (x).begin(), (x).end()
@@ -54,48 +54,34 @@ void setIO(const string &PROB = "") {
 }
 
 /* ============================ */
+string goal = "Begin the Escape execution at the Break of Dawn";
 
-const int maxn = 52;
-const int maxm = 1024;
-int n,m,b[maxn],r[maxm];
-int sum_b,sum[maxm];
+string S;
+
+string operation(string S2, int a, int b, int c) {
+    return S2.substr(0, a)+S2.substr(b+1, c-b-1)+S2.substr(a+1, b-a-1)+S2.substr(c+1, sz(S2)-c-1);
+}
 
 int main() {
-    setIO("fence8");
-    
-    fin>>n; sum_b=0;
-    for1(i, n) { fin>>b[i]; sum_b+=b[i]; }
-	fin>>m; for1(i, m) fin>>r[i];
+    setIO("cryptcow");
 
-    sort(b+1, b+n+1);
-	int idx=1;
-	for1(i, m) if(r[i]<=b[n]) {
-        r[idx]=r[i];
-        idx++;
-	}
-	m=idx-1;
-	sort(r+1,r+m+1);
-	for(int i=1;i<=m;i++)
-	{
-		sum[i]=sum[i-1]+r[i];
-		if(sum[i]>sum_b)
-		{
-			m=i-1;
-			break;
-		}
-	}
-	int l=0,r=m,mid;
-	while(l<r) {
-		mid=((l+r)>>1)+1;
-		if(dfs(1,mid))
-			l=mid;
-		else
-			r=mid-1;
-	}
-	fout<<l<<endl;
-	fin.close();
-	fout.close();
-	return 0;
+    string t; S="";
+    while(getline(fin, t)) S += t;
+    
+    // if uneven amounts of "C" "O" "W"
+    vi cc, co, cw;
+    for0(i, sz(S)){
+        if (S[i]=='C') cc.pb(i);
+        if (S[i]=='O') co.pb(i);
+        if (S[i]=='W') cw.pb(i);
+    }
+    if (sz(cc)!=sz(co) || sz(cc)!=sz(cw)) { fout <<"0\n0\n"; return 0; }
+    
+    
+    cout << S << endl;
+    operation(S, cc[0], co[0], cw[0]);
+
+    cout << S << endl;
 
     return 0;
 }
