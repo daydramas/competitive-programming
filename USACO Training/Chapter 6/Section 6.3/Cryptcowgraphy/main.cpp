@@ -41,7 +41,7 @@ typedef double ld;
 ifstream fin;
 ofstream fout;
 
-void setIO(const string &PROB = "") {
+void setIO(const string PROB = "") {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     if (PROB.length() != 0) {
@@ -54,34 +54,99 @@ void setIO(const string &PROB = "") {
 }
 
 /* ============================ */
+#define INF 2147483647
+
+unordered_set<int> used;
 string goal = "Begin the Escape execution at the Break of Dawn";
 
-string S;
+string decrypt(string s, int c, int o, int w) {
+    string res(sz(s)-3, 0);
+    int idx = 0;
+    for0 (i, c) res[idx++] = s[i];
+    forc(i, o+1, w-1) res[idx++] = s[i];
+    forc(i, c+1, o-1) res[idx++] = s[i];
+    forc(i, w+1, sz(s)-1) res[idx++] = s[i];
+    return res;
+}
 
-string operation(string S2, int a, int b, int c) {
-    return S2.substr(0, a)+S2.substr(b+1, c-b-1)+S2.substr(a+1, b-a-1)+S2.substr(c+1, sz(S2)-c-1);
+bool freCheck(string s) {
+    int cnt[200][2];
+    memset(cnt, 0, sizeof(cnt));
+    for0(i, sz(goal)) cnt[goal[i]][0]++;
+    for0(i, sz(s)) cnt[s[i]][1]++;
+    for (int i = 0; i < 128; i++) 
+        if (!(i=='C'||i=='O'||i=='W') && cnt[i][0]!=cnt[i][1]) return 0;
+    return 1;
+}
+
+bool preCheck(string s) {
+    for0(i, sz(s)) {
+        if (s[i] == 'C') break;
+        if (s[i] != goal[i]) return 0;
+    }
+    return 1;
+}
+
+bool sufCheck(string s) {
+    int idx = (int)goal.length() - 1;
+    forr0 (i, sz(s)) {
+        if (s[i] == 'W') break;
+        if (s[i] != goal[idx--]) return 0;
+    }
+    return 1;
+}
+
+bool ok(string str, int s, int t) {
+    for (int i=0; (i+t-s)<=sz(goal); i++) {
+        bool flag = 1;
+        for0(j, t-s) if (goal[i+j]!=str[s+j]) { flag = 0; break; }
+        if (flag) return 1;
+    }
+    return 0;
+}
+
+bool subCheck(string s) {
+    int start = 0;
+    for0(i, sz(s)+1) if (s[i]=='C'||s[i]=='O'||s[i]=='W'||s[i]==0) {
+        if (!ok(s, start, i)) return 0;
+        start=i+1;
+    }
+    return 1;
+}
+
+int HASH(string s) {
+    int h = 0, x= 0;
+    for0(i, sz(s)) {
+        h = (h << 4) + s[i];
+        if ((x = h&0xF0000000L) != 0) h ^= (x >> 24);
+        h &= ~x;
+    }
+    return h;
+}
+
+bool dfs(string s, int depth) {
+    if (depth == 0) return ( s == goal );
+    for0(O, sz(s)) if (s[O]=='O') { // looping through all O's
+        for0(C, O) if (s[C]=='C') { // looping through all C's
+            for (int W=(sz(s)-1); W>O; W--) if (s[W]=='W') { // looping through all W's
+                string t = decrypt(s, C, O, W);
+                if (!preCheck(t)||!sufCheck(t)||!subCheck(t)) continue;
+                int h = HASH(t);
+                if (used.find(h) != used.end()) continue; // if same string was used before
+                if (dfs(t, depth - 1)) return 1; // continue to descrypt string
+                used.insert(h);
+            }
+        }
+    }
+    return 0;
 }
 
 int main() {
     setIO("cryptcow");
+    string s; getline(fin, s);
 
-    string t; S="";
-    while(getline(fin, t)) S += t;
-    
-    // if uneven amounts of "C" "O" "W"
-    vi cc, co, cw;
-    for0(i, sz(S)){
-        if (S[i]=='C') cc.pb(i);
-        if (S[i]=='O') co.pb(i);
-        if (S[i]=='W') cw.pb(i);
-    }
-    if (sz(cc)!=sz(co) || sz(cc)!=sz(cw)) { fout <<"0\n0\n"; return 0; }
-    
-    
-    cout << S << endl;
-    operation(S, cc[0], co[0], cw[0]);
-
-    cout << S << endl;
-
+    int T = (sz(s) - 47) / 3;
+    if ((sz(s)-47)%3 == 0 && freCheck(s) && dfs(s, T)) fout<<1<<" "<<T<<"\n";
+    else fout<<"0 0\n";
     return 0;
 }
