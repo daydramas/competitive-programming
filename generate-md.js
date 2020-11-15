@@ -17,9 +17,9 @@ function recurse(file_path) {
             const MDdata = `# ${MDHeader}\n\`\`\`cpp\n${code}\n\`\`\``;
             fs.writeFileSync(`${file_path}/README.md`, MDdata); 
         } else {
-            var navbar = `[${cppFiles[0].name}](#0)`;
+            var navbar = `<a href="#0">${cppFiles[0].name}</a>`;
             for (var i=1; i<cppFiles.length; i++) 
-                navbar += ` | [${cppFiles[i].name}](#${i})`;
+                navbar += ` | <a href="#${i}">${cppFiles[i].name}</a>`;
             var MDdata = `<div align="center"> ${navbar} </div>\n\n`;
             for (var i=0; i<cppFiles.length; i++) {
                 const code = fs.readFileSync(`${file_path}/${cppFiles[i].name}`, {encoding:'utf8', flag:'r'} ); 

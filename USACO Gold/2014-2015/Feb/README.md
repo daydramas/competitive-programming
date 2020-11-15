@@ -1,4 +1,4 @@
-<div align="center"> [cencoring.cpp](#0) | [fencing.cpp](#1) | [hopscotch.cpp](#2) </div>
+<div align="center"> <a href="#0">cencoring.cpp</a> | <a href="#1">fencing.cpp</a> | <a href="#2">hopscotch.cpp</a> </div>
 
 # [cencoring.cpp](#0)
 ```cpp

@@ -1,4 +1,4 @@
-<div align="center"> [guard.cpp](#0) | [marathon.cpp](#1) </div>
+<div align="center"> <a href="#0">guard.cpp</a> | <a href="#1">marathon.cpp</a> </div>
 
 # [guard.cpp](#0)
 ```cpp

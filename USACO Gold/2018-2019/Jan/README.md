@@ -1,4 +1,4 @@
-<div align="center"> [poetry.cpp](#0) | [shortcut.cpp](#1) | [sleepy.cpp](#2) </div>
+<div align="center"> <a href="#0">poetry.cpp</a> | <a href="#1">shortcut.cpp</a> | <a href="#2">sleepy.cpp</a> </div>
 
 # [poetry.cpp](#0)
 ```cpp

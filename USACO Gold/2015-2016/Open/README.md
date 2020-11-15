@@ -1,4 +1,4 @@
-<div align="center"> [248.cpp](#0) | [closing.cpp](#1) | [split.cpp](#2) </div>
+<div align="center"> <a href="#0">248.cpp</a> | <a href="#1">closing.cpp</a> | <a href="#2">split.cpp</a> </div>
 
 # [248.cpp](#0)
 ```cpp

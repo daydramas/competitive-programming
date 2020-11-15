@@ -1,4 +1,4 @@
-<div align="center"> [cardgame.cpp](#0) | [dream.cpp](#1) | [feast.cpp](#2) </div>
+<div align="center"> <a href="#0">cardgame.cpp</a> | <a href="#1">dream.cpp</a> | <a href="#2">feast.cpp</a> </div>
 
 # [cardgame.cpp](#0)
 ```cpp

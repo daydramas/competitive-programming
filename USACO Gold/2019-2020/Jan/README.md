@@ -1,4 +1,4 @@
-<div align="center"> [boards.cpp](#0) | [threesum.cpp](#1) | [time.cpp](#2) </div>
+<div align="center"> <a href="#0">boards.cpp</a> | <a href="#1">threesum.cpp</a> | <a href="#2">time.cpp</a> </div>
 
 # [boards.cpp](#0)
 ```cpp
