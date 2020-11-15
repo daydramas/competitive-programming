@@ -2,3 +2,6 @@
 main
 .DS_Store
 tempCodeRunnerFile.cpp
+
+node_modules/
+package-lock.json

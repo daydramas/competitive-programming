@@ -1,0 +1,23 @@
+{
+  "name": "cp",
+  "version": "1.0.0",
+  "description": "My solutions to various programming problems.",
+  "main": "generate-md.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dliu426/cp.git"
+  },
+  "author": "@dliu426",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dliu426/cp/issues"
+  },
+  "homepage": "https://github.com/dliu426/cp#readme",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
