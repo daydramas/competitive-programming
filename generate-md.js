@@ -17,16 +17,14 @@ function recurse(file_path) {
             const MDdata = `# ${MDHeader}\n\`\`\`cpp\n${code}\n\`\`\``;
             fs.writeFileSync(`${file_path}/README.md`, MDdata); 
         } else {
-            var navbar = `<a href="#${cppFiles[0].name.split('.').join("")}">${cppFiles[0].name}</a>`;
-            for (var i=1; i<cppFiles.length; i++) 
-                navbar += ` | <a href="#${cppFiles[i].name.split('.').join("")}">${cppFiles[i].name}</a>`;
-            var MDdata = `<div align="center"> ${navbar} </div>\n\n`;
+            /* This automatically changes *.cpp to a folder with its contents */
             for (var i=0; i<cppFiles.length; i++) {
-                const code = fs.readFileSync(`${file_path}/${cppFiles[i].name}`, {encoding:'utf8', flag:'r'} ); 
-                MDdata += `# [${cppFiles[i].name}](#${i})\n`;
-                MDdata += `\`\`\`cpp\n${code}\n\`\`\`\n\n`;
+                const name = cppFiles[i].name.split('.')[0];
+                fs.mkdirSync(`${file_path}/${name}`); 
+                fs.renameSync(`${file_path}/${name}.cpp`, `${file_path}/${name}/main.cpp`); 
+                fs.writeFileSync(`${file_path}/${name}/${name}.in`, '');
+                fs.writeFileSync(`${file_path}/${name}/${name}.out`, '');
             }
-            fs.writeFileSync(`${file_path}/README.md`, MDdata); 
         }
         
     }
