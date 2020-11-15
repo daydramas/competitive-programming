@@ -1,5 +1,5 @@
 # Competitive Programming
-My solutions to various programming problems.
+My solutions to various programming problems. Note that some code might not be finished :P
 
 ## [Datastructures](/Datastructures)
 Some datastructures (trees, and more).
