@@ -1,4 +1,4 @@
-<div align="center"> <a href="#0">circlecross.cpp</a> | <a href="#1">nocross.cpp</a> | <a href="#2">visitfj.cpp</a> </div>
+<div align="center"> <a href="#circlecrosscpp">circlecross.cpp</a> | <a href="#nocrosscpp">nocross.cpp</a> | <a href="#visitfjcpp">visitfj.cpp</a> </div>
 
 # [circlecross.cpp](#0)
 ```cpp

@@ -1,4 +1,4 @@
-<div align="center"> <a href="#0">dirtraverse.cpp</a> | <a href="#1">snowboots.cpp</a> | <a href="#2">taming.cpp</a> </div>
+<div align="center"> <a href="#dirtraversecpp">dirtraverse.cpp</a> | <a href="#snowbootscpp">snowboots.cpp</a> | <a href="#tamingcpp">taming.cpp</a> </div>
 
 # [dirtraverse.cpp](#0)
 ```cpp

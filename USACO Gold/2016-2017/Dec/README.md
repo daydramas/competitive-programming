@@ -1,4 +1,4 @@
-<div align="center"> <a href="#0">checklist.cpp</a> | <a href="#1">lasers.cpp</a> | <a href="#2">moocast.cpp</a> </div>
+<div align="center"> <a href="#checklistcpp">checklist.cpp</a> | <a href="#laserscpp">lasers.cpp</a> | <a href="#moocastcpp">moocast.cpp</a> </div>
 
 # [checklist.cpp](#0)
 ```cpp

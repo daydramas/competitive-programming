@@ -1,4 +1,4 @@
-<div align="center"> <a href="#0">balance.cpp</a> | <a href="#1">snakes.cpp</a> | <a href="#2">walk.cpp</a> </div>
+<div align="center"> <a href="#balancecpp">balance.cpp</a> | <a href="#snakescpp">snakes.cpp</a> | <a href="#walkcpp">walk.cpp</a> </div>
 
 # [balance.cpp](#0)
 ```cpp
