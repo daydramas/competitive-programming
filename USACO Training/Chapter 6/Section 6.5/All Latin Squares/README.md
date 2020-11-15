@@ -1,3 +1,4 @@
+# All Latin Squares
 ```cpp
 /*
  ID: dongliu3

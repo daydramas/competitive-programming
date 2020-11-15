@@ -1,3 +1,4 @@
+# Hamming Codes
 ```cpp
 /*
  ID: dongliu3

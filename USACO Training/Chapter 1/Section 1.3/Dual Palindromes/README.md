@@ -1,3 +1,4 @@
+# Dual Palindromes
 ```cpp
 /*
  ID: dongliu3

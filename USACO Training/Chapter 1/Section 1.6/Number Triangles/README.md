@@ -1,3 +1,4 @@
+# Number Triangles
 ```cpp
   
 /*

@@ -1,3 +1,4 @@
+# Magic Squares
 ```cpp
 /*
  ID: dongliu3

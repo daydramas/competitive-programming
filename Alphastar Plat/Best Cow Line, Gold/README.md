@@ -1,3 +1,4 @@
+# Best Cow Line, Gold
 ```cpp
 /*
  ID: dongliu3

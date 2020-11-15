@@ -13,8 +13,9 @@ function recurse(file_path) {
                      files.find(file => path.extname(`${file_path}/${file.name}`) == ".out") ) {
         /* Add README */
         const code = fs.readFileSync(`${file_path}/${cppFile.name}`, {encoding:'utf8', flag:'r'} ); 
-        const data = `\`\`\`cpp\n${code}\n\`\`\``;
-        fs.writeFileSync(`${file_path}/README.md`, data); 
+        const MDHeader = file_path.split('/').pop();
+        const MDdata = `# ${MDHeader}\n\`\`\`cpp\n${code}\n\`\`\``;
+        fs.writeFileSync(`${file_path}/README.md`, MDdata); 
     }
     /* Look into folders into its current one */
     for (var i=0; i<files.length; i++) {

@@ -1,3 +1,4 @@
+# A Rectangular Barn
 ```cpp
 /*
  ID: dongliu3

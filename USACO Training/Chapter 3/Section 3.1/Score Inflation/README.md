@@ -1,3 +1,4 @@
+# Score Inflation
 ```cpp
 /*
  ID: dongliu3
