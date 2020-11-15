@@ -5,6 +5,8 @@ const fs = require('fs');
 const path = require('path'); 
 
 function recurse(file_path) {
+    if (file_path.startsWith(`${__dirname}/Datastructures`)) return;
+
     const files = fs.readdirSync(file_path, { withFileTypes: true });
     /* Check if there exists a .cpp and .in and .out file in the current folder */
     var cppFiles;
