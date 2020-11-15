@@ -5,7 +5,7 @@
   "main": "generate-md.js",
   "scripts": {
     "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "update": "npm start"
   },
   "repository": {
     "type": "git",
