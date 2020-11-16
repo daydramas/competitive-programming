@@ -20,5 +20,5 @@ function recurse(file_path, depth) {
 }
 
 module.exports = function main() {
-    recurse(path.join(__dirname, "../.."), 0)
+    recurse(path.join(__dirname, "../../.."), 0)
 }
