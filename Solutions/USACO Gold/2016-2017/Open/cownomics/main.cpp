@@ -1,71 +1,55 @@
-/*
-  _____     ______              ______                _______
- |     \   |      |  |\     |  |             |           |     |      |
- |	    \  |      |  | \    |  |             |           |     |      |
- |      |  |      |  |  \   |  |   ___       |           |     |      |
- |      |  |      |  |   \  |  |      |      |           |     |      |
- |      /  |      |  |    \ |  |      |      |           |     |      |
- |_____/   |______|  |     \|  |______|      |______  ___|___  |______|
-
-      ___   ___        ___             ___   ___   ___  ___
-  __ | __  |   | |    |   \   / |   | |___  |___| |    |   | \
-     |___| |___| |___ |___/   \ |___|  ___| |   | |___ |___| /
-
-*/
-
-#include <iostream>
-#include <map>
-#include <vector>
-#include <set>
-#include <queue>
-#include <algorithm>
-#include <iterator>
-#include <fstream>
-#include <cstring>
-#include <string>
-#include <iomanip>
-#include <iterator>
-#include <stack>
-#include <utility>
+#include <bits/stdc++.h>
 using namespace std;
 
 // structures/defines
 
+#define ll long long
+
+    const ll MOD = 1e9 + 9;
+    const ll BASE = 9973;
+
+    void calc_pw(int &n, vector<ll> &pw) {
+        pw[0] = 1;
+        for (int i=0; i<n; i++) pw[i+1] = (pw[i] * BASE) % MOD;
+    }
+
+    void calc_hashes(int &n, vector<ll> &hsh, string &s) {
+        hsh[0] = 1;
+        for (int i=0; i<n; i++)
+            hsh[i + 1] = ((hsh[i] * BASE) % MOD + s[i]) % MOD;
+    }
+
+    ll get_hash(vector<ll> &hsh, vector<ll> &pw, int &a, int &b) {
+        return (hsh[b + 1] - (hsh[a] * pw[b - a + 1]) % MOD + MOD) % MOD;
+    }
+
 // global variables
 int N, M;
 string spotty[501], plain[501];
+
+vector<ll> spottyH[501], plainH[501];
+vector<ll> pw;
 
 //functions
 bool possible(int sz) {
 	int combo = M-sz+1;
 //	cout << sz << " " << combo << endl;
 	bool ans = false;
-	for(int s=1; s<=combo; s++) {
-		set<string> S; int tans = 0;
+	for(int s=0; s<combo; s++) {
+		set<ll> S; int tans = 0;
 		for(int i=1; i<=N; i++) {
-			S.insert(spotty[i].substr(s, sz));
+			int e = s+sz-1;
+			S.insert(get_hash(spottyH[i], pw, s, e));
 		}
-		tans = S.size();
+		bool flag = true;
 		for(int i=1; i<=N; i++) {
-			string mySUBSTRING = plain[i].substr(s, sz);
-			if(S.count(mySUBSTRING)>0) {
-				S.erase(mySUBSTRING);
+			int e = s+sz-1;
+			if(S.count(get_hash(plainH[i], pw, s, e))>0) {
+				flag = false;
+				break;
 			}
 		}
-		if(S.size() == tans) return true;
-//		bool temp = true;
-//		for(int i=1; i<=N; i++) {
-//			string str = spotty[i].substr(s, sz);
-//			for(int j=1; j<=N; j++) {
-//				string str2 = plain[j].substr(s, sz);
-//				if(str == str2) {
-//					temp = false;
-//					break;
-//				}
-//			}
-//			if(!temp) break;
-//		}
-//		if(temp) return true;
+		if(flag) return true;
 	}
 	return false;
 }
@@ -80,14 +64,21 @@ int main() {
 	fin >> N >> M;
 	for(int i=1; i<=N; i++) {
 		fin >> spotty[i];
-		spotty[i] = " " + spotty[i];
+		spotty[i] = spotty[i];
 	}
 	for(int i=1; i<=N; i++) {
 		fin >> plain[i];
-		plain[i] = " " + plain[i];
+		plain[i] = plain[i];
 	}
 
 	// main
+	pw.resize(M+1);
+	calc_pw(M, pw);
+	for (int i=1; i<=N; i++) {
+		spottyH[i].resize(M+1), plainH[i].resize(M+1);
+		calc_hashes(M, spottyH[i], spotty[i]);
+		calc_hashes(M, plainH[i], plain[i]);
+	}
 	int s=1, b=M;
 	while(s<b) {
 		int m=(s+b)/2;
@@ -102,302 +93,4 @@ int main() {
 	return 0;
 }
 
-
-
-///*
-//  _____     ______              ______                _______
-// |     \   |      |  |\     |  |             |           |     |      |
-// |	    \  |      |  | \    |  |             |           |     |      |
-// |      |  |      |  |  \   |  |   ___       |           |     |      |
-// |      |  |      |  |   \  |  |      |      |           |     |      |
-// |      /  |      |  |    \ |  |      |      |           |     |      |
-// |_____/   |______|  |     \|  |______|      |______  ___|___  |______|
-//
-//      ___   ___        ___             ___   ___   ___  ___
-//  __ | __  |   | |    |   \   / |   | |___  |___| |    |   | \
-//     |___| |___| |___ |___/   \ |___|  ___| |   | |___ |___| /
-//
-//*/
-//
-//#include <iostream>
-//#include <map>
-//#include <vector>
-//#include <set>
-//#include <queue>
-//#include <algorithm>
-//#include <iterator>
-//#include <fstream>
-//#include <cstring>
-//#include <string>
-//#include <iomanip>
-//#include <iterator>
-//#include <stack>
-//#include <utility>
-//using namespace std;
-//
-//// structures/defines
-//
-//// global variables
-//int N, M;
-//string spotty[501], plain[501];
-//long long rollRandom[501], spottyHash[501], plainHash[501];
-//
-////functions
-//
-//int main() {
-//	// local variables
-//
-//	// fstream
-//	ifstream fin("cownomics.in");
-//	ofstream fout("cownomics.out");
-//
-//	// input
-//	fin >> N >> M;
-//	for(int i=1; i<=N; i++) {
-//		fin >> spotty[i];
-//		spotty[i] = " "+spotty[i];
-//	}
-//	for(int i=1; i<=N; i++) {
-//		fin >> plain[i];
-//		plain[i] = " " + plain[i];
-//	}
-//	for(int i=1; i<=M; i++) {
-//		rollRandom[i] = rand() % 1000000007;
-//	}
-//
-//	// main
-//	int i=1, j=1; bool d = true; int ans = M;
-//	set<long long> hash;
-//	while(j <= M) {
-//		if(!d) {
-////			cout << i << " " << j << endl;
-//			ans = min(ans, j-i);
-//		}
-//		hash.clear();
-//		if(d) {
-//			d = false;
-//			for(int k=1; k<=N; k++) {
-//				spottyHash[k] += (rollRandom[j]*spotty[k][j])%1000000007;
-//				hash.insert(spottyHash[k]);
-//			}
-//			for(int k=1; k<=N; k++) {
-//				plainHash[k] += (rollRandom[j]*plain[k][j])%1000000007;
-//				if(hash.count(plainHash[k])) {
-//					d = true;
-//				}
-//			}
-//			j++;
-//		} else if (!d){
-//			d = false;
-//			for(int k=1; k<=N; k++) {
-//				spottyHash[k] -= (rollRandom[i]*spotty[k][i])%1000000007;
-//				hash.insert(spottyHash[k]);
-//			}
-//			for(int k=1; k<=N; k++) {
-//				plainHash[k] -= (rollRandom[i]*plain[k][i])%1000000007;
-//				if(hash.count(plainHash[k])) {
-//					d = true;
-//				}
-//			}
-//			i++;
-//		}
-//	}
-//	// output
-//	fout << ans << endl;
-//	return 0;
-//}
-
-
-
-//
-///*
-//  _____     ______              ______                _______
-// |     \   |      |  |\     |  |             |           |     |      |
-// |	    \  |      |  | \    |  |             |           |     |      |
-// |      |  |      |  |  \   |  |   ___       |           |     |      |
-// |      |  |      |  |   \  |  |      |      |           |     |      |
-// |      /  |      |  |    \ |  |      |      |           |     |      |
-// |_____/   |______|  |     \|  |______|      |______  ___|___  |______|
-//
-//      ___   ___        ___             ___   ___   ___  ___
-//  __ | __  |   | |    |   \   / |   | |___  |___| |    |   | \
-//     |___| |___| |___ |___/   \ |___|  ___| |   | |___ |___| /
-//
-//*/
-//
-//#include <iostream>
-//#include <map>
-//#include <vector>
-//#include <set>
-//#include <bitset>
-//#include <queue>
-//#include <algorithm>
-//#include <iterator>
-//#include <fstream>
-//#include <cstring>
-//#include <string>
-//#include <iomanip>
-//#include <iterator>
-//#include <stack>
-//#include <utility>
-//using namespace std;
-//
-//// structures/defines
-//#define Pair pair<string, int>
-//#define c first
-////#define i second
-//// global variables
-//int N, M;
-//bitset<1002> spotty[501], plain[501];
-//vector<int> dp[501][501];
-//vector<bitset<1002>> dp_s[501][501];
-//
-////functions
-//bitset<1002> MY_SUB_SET(bitset<1002> os, int l, int r) {
-//	bitset<1002> r_value;
-////	int
-//	for(int i=l; i<=r; i++) {
-//		r_value.set(i-l, os[i]);
-//	}
-//	return r_value;
-//}
-//int main() {
-//	// local variables
-//
-//	// fstream
-//	ifstream fin("cownomics.in");
-//	ofstream fout("cownomics.out");
-//
-//	// input
-//	fin >> N >> M;
-//	for(int i=1; i<=N; i++) {
-//		string temp; fin >> temp;
-//		for(int j=1; j<=M; j++) {
-//			if(temp[j-1] == 'A') {
-//				spotty[i].set(j*2-1, 0);
-//				spotty[i].set(j*2, 0);
-//			} else if (temp[j-1] == 'C') {
-//				spotty[i].set(j*2-1, 0);
-//				spotty[i].set(j*2, 1);
-//			} else if (temp[j-1] == 'G') {
-//				spotty[i].set(j*2-1, 1);
-//				spotty[i].set(j*2, 0);
-//			} else if (temp[j-1] == 'T') {
-//				spotty[i].set(j*2-1, 1);
-//				spotty[i].set(j*2, 1);
-//			}
-//		}
-//		fout << spotty[i] << endl;
-//	}
-//	for(int i=1; i<=N; i++) {
-//		string temp; fin >> temp;
-//		for(int j=1; j<=M; j++) {
-//			if(temp[j-1] == 'A') {
-//				plain[i].set(j*2-1, 0);
-//				plain[i].set(j*2, 0);
-//			} else if (temp[j-1] == 'C') {
-//				plain[i].set(j*2-1, 0);
-//				plain[i].set(j*2, 1);
-//			} else if (temp[j-1] == 'G') {
-//				plain[i].set(j*2-1, 1);
-//				plain[i].set(j*2, 0);
-//			} else if (temp[j-1] == 'T') {
-//				plain[i].set(j*2-1, 1);
-//				plain[i].set(j*2, 1);
-//			}
-//		}
-//	}
-////	// main
-//	for(int i=0; i<=M; i++) {
-//		for(int j=0; j<=M; j++) {
-//			dp[i][j].push_back(-1);
-//			dp_s[i][j].push_back(0);
-//		}
-//	}
-//
-//	int K = 501;
-//	for(int i=1; i<=M; i++) {
-//		if(K == 501) {
-//			for(int j=i; j>=1; j--) {
-//				dp[i][i-j+1].clear();
-////				cout << i << " " << j << endl;
-//				int nk = i-j;
-//				for(int k=0; k<dp[i-1][nk].size(); k++) {
-//					int in=dp[i-1][nk][k];
-//					if(in == -1) {
-//						for(int l=1; l<=N; l++) {
-////							string str = dp[i-1][i-j+1][k].c+string(1, spotty[l][i]);
-//							bitset<1002> str = MY_SUB_SET(spotty[l], 2*j, 2*i-1);
-////							bitset<1002> bit1 =
-//							for(int m=1; m<=N; m++) {
-////								cout<<i<<" " << j<<" : "<<str<<" and " << plain[m].substr(j, i-j+1) << endl;
-////								if(str == plain[m].substr(j, i-j+1)) {
-//								if(str == MY_SUB_SET(plain[m], 2*j, 2*i-1)) {
-////									cout<<i<<" " << j<<" : " << plain[m].substr(j, i-j+1) << endl;
-//									dp[i][i-j+1].push_back(l);
-//									break;
-//								}
-////
-//							}
-//						}
-//					} else {
-////						string str = spotty[in].substr(j, i-j+1);
-//						bitset<1002> str = MY_SUB_SET(spotty[in], 2*j, 2*i-1);
-//////								string(1, spotty[in][i]);
-////						cout << str << endl;
-//						for(int m=1; m<=N; m++) {
-//							if(str == MY_SUB_SET(plain[m], 2*j, 2*i-1)) {
-////								cout<<i<<" " << j<<" : "<<str<<" and " << plain[m].substr(j, i-j+1) << endl;
-//								dp[i][i-j+1].push_back(in);
-//								break;
-//							}
-////
-//						}
-//					}
-//				}
-//				if(dp[i][i-j+1].empty()) {
-////					cout <<"K: "<<i<<" "<<j<<endl;
-//					K = min(K, i-j+1);
-//				}
-//			}
-//		} else {
-//			for(int j=i; j>=i-K+1; j--) {
-//				dp[i][i-j+1].clear();
-//				int nk = i-j;
-//				for(int k=0; k<dp[i-1][nk].size(); k++) {
-//					int in=dp[i-1][nk][k];
-//					if(in == -1) {
-//						for(int l=1; l<=N; l++) {
-//							bitset<1002> str = MY_SUB_SET(spotty[l], 2*j, 2*i-1);
-//							for(int m=1; m<=N; m++) {
-//								if(str == MY_SUB_SET(plain[m], 2*j, 2*i-1)) {
-//									dp[i][i-j+1].push_back(l);
-//									break;
-//								}
-////
-//							}
-//						}
-//					} else {
-//						bitset<1002> str = MY_SUB_SET(spotty[in], 2*j, 2*i-1);
-//
-////
-//						for(int m=1; m<=N; m++) {
-//							if(str == MY_SUB_SET(plain[m], 2*j, 2*i-1)) {
-////								cout<<i<<" " << j<<" : "<<str<<" and " << plain[m].substr(j, i-j+1) << endl;
-//								dp[i][i-j+1].push_back(in);
-//								break;
-//							}
-////
-//						}
-//					}
-//				}
-//				if(dp[i][i-j+1].empty()) {
-//					K = min(K, i-j+1);
-//				}
-//			}
-//		}
-//	}
-////	// output
-//	fout << K << endl;
-//	return 0;
-//}
+  
