@@ -2,7 +2,7 @@
   "name": "cp",
   "version": "1.0.0",
   "description": "My solutions to various programming problems.",
-  "main": "generate-md.js",
+  "main": "Scripts/generate-md.js",
   "scripts": {
     "start": "node .",
     "update": "npm start"
