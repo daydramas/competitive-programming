@@ -1,0 +1,6 @@
+[
+    {
+        "name": "generate-markdown",
+        "path": "./functions/generate-md.js"
+    }
+]

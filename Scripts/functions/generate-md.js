@@ -39,10 +39,9 @@ function recurse(file_path) {
 
 }
 
-async function main() {
-    console.log('Starting process...');
+module.exports = function main() {
+    console.log('Generating markdown files...');
     recurse(__dirname);
-    console.log('Done!!!');
+    console.log('Done with generating markdown files!!!');
 }
 
-main();
