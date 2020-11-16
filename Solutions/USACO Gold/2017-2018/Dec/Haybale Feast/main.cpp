@@ -88,9 +88,29 @@ int main() {
 	// cout <<"\n+------ Starting\n"; clock_t startT = clock(); 
 	setIO("hayfeast"); // setTC("hayfeast", "XX");
 
-	int n, m;
+	int n; ll m;
 	fr(n, m);
-	
+
+	ii h[n+1];
+	for1(i, n) fr(h[i].F, h[i].S);
+
+	ll ttl = h[1].F;
+	int s=1, e=1;
+	multiset<int> sp; 
+	sp.insert(h[1].S);
+	int ans = INF;
+	while(s<=n && e<=n) {
+		if (ttl >= m) {
+			ans = min(ans, *sp.rbegin());
+			ttl-=h[s].F, sp.erase(sp.find(h[s].S)), s++;
+		} else if (e<n) {
+			e++;
+			ttl+=h[e].F; sp.insert(h[e].S);
+		} else break;
+	}
+
+	fout << ans <<"\n";
+
 
 	// cout <<"+------ Ending | Time taken: "<<((float)(clock()-startT)/CLOCKS_PER_SEC)<<" seconds \n\n";
 	return 0;
