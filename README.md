@@ -1,12 +1,11 @@
 # Competitive Programming
 My solutions to various programming problems. Note that some code might not be finished :P
 
-## [Datastructures](/Datastructures)
-Some datastructures (trees, and more).
+### [Implementations](/Implementations)
+Implementation of things you might need for competitive programming.
 
-## [USACO Training](/USACO%20Training)
-Solutions to USACO Training problems.
+### [Scripts](/Scripts)
+Not really important, just scripts I use for cleaning my workspace.
 
-## [USACO Gold](/USACO%20Gold)
-Solutions to past USACO Gold contest problems.
-
+### [Solutions](/Solutions)
+Solutions for competitive programming and other problems.
