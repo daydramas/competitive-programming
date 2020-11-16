@@ -2,7 +2,6 @@
   "name": "cp",
   "version": "1.0.0",
   "description": "My solutions to various programming problems.",
-  "main": "Scripts/index.js",
   "scripts": {
     "start": "node .",
     "update": "npm start"
