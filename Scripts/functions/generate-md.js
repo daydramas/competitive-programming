@@ -1,5 +1,6 @@
 /*
  * This program recursively generates READMEs for my solutions
+ * Not working rn
 */
 const fs = require('fs'); 
 const path = require('path'); 

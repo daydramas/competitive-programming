@@ -2,5 +2,9 @@
     {
         "name": "generate-markdown",
         "path": "./functions/generate-md.js"
+    },
+    {
+        "name": "clear-readme",
+        "path": "./functions/clear-readme.js"
     }
 ]
