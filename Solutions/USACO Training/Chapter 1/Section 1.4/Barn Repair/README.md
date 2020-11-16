@@ -1,4 +1,0 @@
-# Barn Repair
-```cpp
-
-```
