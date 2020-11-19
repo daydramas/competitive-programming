@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/dliu426/cp#readme",
   "dependencies": {
+    "cpp-decomment": "^0.1.5",
+    "cpp-header": "^0.1.5",
+    "front-matter": "^4.0.2",
     "fs": "0.0.1-security",
     "prompt": "^1.0.0"
   }
