@@ -1,5 +1,10 @@
 #include <bits/stdc++.h>
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+
 using namespace std;
+using namespace __gnu_pbds;
+template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 typedef long long ll;
 typedef string str;
@@ -55,6 +60,21 @@ namespace IO {
     template<class H, class... T> void re(H& h, T&... t) { re(h); re(t...); }
     template<class A, class B> void re(pair<A,B>& p) { re(p.f,p.s); }
     template<class A> void re(vector<A>& x) { trav(a,x) re(a); }
+
+    /* To String */
+    #define ts to_string
+    str ts(bool b) { return b ? "true" : "false"; }
+    str ts(char c) { str s=""; s+=c; return s; }
+    str ts(str s) { return s; }
+    str ts(const char* s) { return (str)s; }
+    template<class T> str ts(T v) {
+        bool fst=1; str res="{";
+        trav(a, v) {
+            if (!fst) res += ", ";
+            fst = 0; res += ts(a);
+        }
+        res+="}"; return res;
+    }
 
     /* Output */
     template<class A> void pr(A x) { cout << ts(x); }
