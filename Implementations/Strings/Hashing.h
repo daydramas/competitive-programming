@@ -1,4 +1,4 @@
-/*
+/**
  * Description: String Hashing
  * Time: O(N) initialization, O(1) calculation
  * Source: USACO Guide
