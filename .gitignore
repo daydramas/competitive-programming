@@ -1,13 +1,9 @@
-# VSCode configuration
+# VSCode
 .vscode
 
 # MacOS Files
 .DS_Store
 
-# C++ Compiling
+# C++ Stuff
 main
 tempCodeRunnerFile.cpp
-
-# NodeJS
-node_modules/
-package-lock.json
