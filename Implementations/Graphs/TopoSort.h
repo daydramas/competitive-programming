@@ -11,7 +11,7 @@ template<int SZ> struct TopoSort {
         FOR(i,1,N) if(!w[i]) Q.push(i);
         while(!Q.empty()) {
             int a=Q.front(); Q.pop(); res.pb(a);
-            trav(b, a) if (!(--w[b])) Q.push(b);
+            trav(b, adj[a]) if (!(--w[b])) Q.push(b);
         }
         return sz(res)==N;
     }
