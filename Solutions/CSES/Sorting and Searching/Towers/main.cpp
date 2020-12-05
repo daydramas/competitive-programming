@@ -66,16 +66,30 @@ using namespace IO;
 
 /* ============================ */
 
+void ri (int &x) {
+    int c; x = 0;
+    c=getchar_unlocked();
+    for(; c>='0' && c <='9'; c=getchar_unlocked())
+        x = 10*x + c-'0';
+}
+inline void wi(int x) {
+	if (x <= 9)
+		putchar_unlocked('0' + x);
+	else {
+		wi(x / 10);
+		putchar_unlocked('0' + x % 10);
+	}
+}
 int main() {
     setIO("");
-
-    int n; re(n);
+    int n; ri(n);
     vi v;
-    for0(i,n) {
-        int a; re(a);
+    while(n--) {
+        int a; ri(a);
         const auto &it = upper_bound(all(v), a);
         if (it == v.end()) v.pb(a);
         else *it=a;
     }
-    cout << sz(v);
+    // cout << sz(v);
+    wi(sz(v));
 }
