@@ -1,22 +1,14 @@
 /* LOL I didn't use SCC */
-#include <bits/stdc++.h>
+
+#include <iostream>
+#include <stdio.h>
+#include <algorithm>
+
 using namespace std;
 
-using ll = long long;
-using vi = vector<int>;
-#define f first
-#define s second
-#define pb push_back
-#define all(x) begin(x), end(x)
-
-#define F0R(i,a) for(int i=0; i<(a); i++)
-#define FOR(i,a,b) for(int i=(a); i<=(b); i++)
-#define R0F(i,a) for(int i=(a)-1; i>=0; i--)
-#define ROF(i,a,b) for(int i=(b); i>=a; i--)
-#define trav(a,x) for (auto& a: x)
-
 int n, m;
-vi w1,w2,d,r;
+const int MX=1e5+5;
+int w1[MX], w2[MX], d[MX], r[MX];
 
 void ri (int &x) {
     int c; x = 0;
@@ -27,12 +19,9 @@ void ri (int &x) {
 
 
 int main() {
-
-    // cin >> n >> m;
+    ios_base::sync_with_stdio(false); cin.tie(nullptr);
     ri(n); ri(m);
-    w1.resize(n+1), w2.resize(n+1);
-    d.resize(m+1); r.resize(m+1);
-    FOR(i,1,n) {
+    for(int i=1; i<=n; i++) {
         char s1, s2;
         s1=getchar_unlocked(); getchar_unlocked(); ri(w1[i]);
         s2=getchar_unlocked(); getchar_unlocked(); ri(w2[i]);
@@ -42,7 +31,7 @@ int main() {
         if (s2=='-') d[w2[i]]--, w2[i] *= -1;
         else d[w2[i]]++;
     }
-    FOR(i,1,n) {
+    for(int i=1; i<=n; i++) {
         int v1=abs(w1[i]), v2=abs(w2[i]);
         if (r[v1]!=0 && r[v1]==(w1[i]/v1)) { continue; }
         if (r[v2]!=0 && r[v2]==(w2[i]/v2)) { continue; }
@@ -55,8 +44,12 @@ int main() {
             else { r[v2]=(w2[i]/v2); }
             continue;
         }
-        cout <<"IMPOSSIBLE"; goto end;
+        cout <<"IMPOSSIBLE"; return 0;
     }
-    FOR(i,1,m) cout << (r[i]==-1?"-":"+") <<" ";
-    end: return 0;
+    for(int i=1; i<=m; i++) {
+        if (r[i]==-1) putchar_unlocked('-');
+        else putchar_unlocked('+');
+        putchar_unlocked(' ');
+    }
+    return 0;
 }
