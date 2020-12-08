@@ -1,25 +1,23 @@
 /* LOL I didn't use SCC */
-
-#include <iostream>
 #include <stdio.h>
-#include <algorithm>
+#include <stdlib.h>
 
-using namespace std;
+#define pc putchar_unlocked
 
-int n, m;
-const int MX=1e5+5;
-int w1[MX], w2[MX], d[MX], r[MX];
-
-void ri (int &x) {
+inline void ri (int &x) {
     int c; x = 0;
     c=getchar_unlocked();
     for(; c>='0' && c <='9'; c=getchar_unlocked())
         x = 10*x + c-'0';
 }
 
+int n, m;
+const int MX=1e5+5;
+int w1[MX], w2[MX], d[MX], r[MX];
+
 
 int main() {
-    ios_base::sync_with_stdio(false); cin.tie(nullptr);
+
     ri(n); ri(m);
     for(int i=1; i<=n; i++) {
         char s1, s2;
@@ -32,7 +30,8 @@ int main() {
         else d[w2[i]]++;
     }
     for(int i=1; i<=n; i++) {
-        int v1=abs(w1[i]), v2=abs(w2[i]);
+        int v1=abs(w1[i]);
+        int v2=abs(w2[i]);
         if (r[v1]!=0 && r[v1]==(w1[i]/v1)) { continue; }
         if (r[v2]!=0 && r[v2]==(w2[i]/v2)) { continue; }
         if (r[v1]!=0 && r[v2]==0) { r[v2]=(w2[i]/v2); continue; }
@@ -44,12 +43,13 @@ int main() {
             else { r[v2]=(w2[i]/v2); }
             continue;
         }
-        cout <<"IMPOSSIBLE"; return 0;
+        pc('I'),pc('M'),pc('P'),pc('O'),pc('S'),pc('S'),pc('I'),pc('B'),pc('L'),pc('E');
+        return 0;
     }
     for(int i=1; i<=m; i++) {
-        if (r[i]==-1) putchar_unlocked('-');
-        else putchar_unlocked('+');
-        putchar_unlocked(' ');
+        if (r[i]==-1) pc('-');
+        else pc('+');
+        pc(' ');
     }
     return 0;
 }
