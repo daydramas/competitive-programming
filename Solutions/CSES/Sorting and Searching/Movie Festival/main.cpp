@@ -1,5 +1,10 @@
 #include <bits/stdc++.h>
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+
 using namespace std;
+using namespace __gnu_pbds;
+template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 typedef long long ll;
 typedef string str;
@@ -56,6 +61,21 @@ namespace IO {
     template<class A, class B> void re(pair<A,B>& p) { re(p.f,p.s); }
     template<class A> void re(vector<A>& x) { trav(a,x) re(a); }
 
+    /* To String */
+    str ts(int i) { return to_string(i); }
+    str ts(bool b) { return b ? "true" : "false"; }
+    str ts(char c) { str s=""; s+=c; return s; }
+    str ts(str s) { return s; }
+    str ts(const char* s) { return (str)s; }
+    template<class T> str ts(vector<T> v) {
+        bool fst=1; str res="{";
+        trav(a, v) {
+            if (!fst) res += ", ";
+            fst = 0; res += ts(a);
+        }
+        res+="}"; return res;
+    }
+
     /* Output */
     template<class A> void pr(A x) { cout << ts(x); }
     template<class H, class... T> void pr(const H& h, const T&... t) {
@@ -65,21 +85,24 @@ namespace IO {
 using namespace IO;
 
 /* ============================ */
-bool comp(pii a, pii b) { return a.s < b.s; }
 
 int main() {
     setIO("");
 
     int n; re(n);
-    vector<pii> v(n); re(v);
+    vector<pii>v(n);
+    trav(a,v) re(a.s,a.f);
+    sort(all(v));
 
-    sort(all(v), comp);
-    int curr=-1, ans=0;
-    trav(a, v) {
-        if (a.f >= curr) {
-            curr = a.s;
-            ans++;
+    multiset<int> ms;
+    ms.insert(0);
+    int cnt=0;
+    trav(a,v) {
+        const auto &it = ms.upper_bound(a.s);
+        if (it!=ms.begin()) {
+            ms.erase(prev(it));
+            ms.insert(a.f); cnt++;
         }
     }
-    cout << ans;
+    cout<<cnt;
 }
