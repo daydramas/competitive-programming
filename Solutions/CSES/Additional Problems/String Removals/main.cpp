@@ -20,6 +20,15 @@ using vi = vector<int>;
 
 int main() {
 
-    $1
+    const int mod = 1e9+7;
+
+    string s; cin >> s;
+    vi cnt(26); ll ans=0;
+    trav(x, s) {
+        ll t = cnt[x-'a'];
+        cnt[x-'a'] = (ans+1) % mod;
+        ans=(2*ans+mod+1-t) % mod;
+    }
+    cout << ans;
 
 }
