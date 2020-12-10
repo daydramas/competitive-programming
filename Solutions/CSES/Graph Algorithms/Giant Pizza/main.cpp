@@ -1,3 +1,6 @@
+#pragma GCC optimize ("O3")
+#pragma GCC target ("sse4")
+
 /* LOL I didn't use SCC */
 #include <stdio.h>
 #include <stdlib.h>
