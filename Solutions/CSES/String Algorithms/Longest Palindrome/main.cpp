@@ -34,13 +34,16 @@ vi manacher(str s) {
 }
 
 int main() {
-    ofstream fout("ok.out");
-    FOR(i,2,200000) fout << i <<" ";
-    // string s; cin >> s;
-    // auto x=manacher(s);
-    // // trav(a,x) cout << a <<"\n";
-    // pair<int,int> ans = {-1,-1};
-    // F0R(i,x.size()) ans = max(ans,{x[i],i});
-    // cout << s.substr((ans.s+1)/2-ans.f/2,ans.f);
+	// cerr <<"\n+------ Starting\n"; clock_t startT = clock();
+	ios::sync_with_stdio(false); cin.tie(nullptr);
+	// freopen("input.in","r",stdin);
+	// freopen("output.in","w",stdout);
+    string s; cin >> s;
+    auto x=manacher(s);
+    // trav(a,x) cout << a <<"\n";
+    pair<int,int> ans = {-1,-1};
+    F0R(i,x.size()) ans = max(ans,{x[i],i});
+    cout << s.substr((ans.s+1)/2-ans.f/2,ans.f);
+	// cerr <<"+------ Ending | Time taken: "<<((float)(clock()-startT)/CLOCKS_PER_SEC)<<" seconds "<<endl<<endl;
 
 }
