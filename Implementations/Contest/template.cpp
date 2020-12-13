@@ -10,6 +10,7 @@ using vi = vector<int>;
 #define s second
 #define pb push_back
 #define all(x) begin(x), end(x)
+#define sz(x) (int)(x).size()
 
 #define F0R(i,a) for(int i=0; i<(a); i++)
 #define FOR(i,a,b) for(int i=(a); i<=(b); i++)
