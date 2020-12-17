@@ -20,24 +20,28 @@ using vi = vector<int>;
 
 const int mod = 1e9+7;
 const int maxn = 505;
-string s;
+
+int n; ll t;
+string S;
 int dp[maxn][maxn];
+int BC[maxn][maxn]; // binomial coefficients
 
 int main() {
-    ios::sync_with_stdio(false); cin.tie(nullptr);
-    cin >> s;
-    int n = s.length();
-    if(n%2) { cout << "0"; return 0; }
-    s = " " + s;
-    FOR(i,1,n) FOR(j,1,n) dp[i][j]=0;
-    // FOR(i,1,n-1) if(s[i]==s[i+1]) dp[i][i+1]=1;
-    FOR(x,2,n) if(x%2==0) FOR(i,1,n) {
-        int j=i+x-1; if(j>n) break;
-        if(x==2) if(s[i]==s[j]) { dp[i][j]=1; continue; }
-        if(s[i] == s[j]) dp[i][j] = (dp[i][j]+dp[i+1][j-1]+1) % mod;
-        if(s[i] == s[i+1]) dp[i][j] = (dp[i][j]+dp[i+2][j]+1) % mod;
-        if(s[j] == s[j-1]) dp[i][j] = (dp[i][j]+dp[i][j-2]+1) % mod;
-        cout <<"dp["<<i<<"]["<<j<<"] = "<<dp[i][j]<<endl;
+
+    cin >> S; n=sz(S);
+
+    F0R(i,n) {
+        BC[i][0] = 1;
+        FOR(j,1,i) BC[i][j] = (BC[i-1][j] + BC[i-1][j-1]) % mod;
     }
-    cout << dp[1][n] <<"\n";
+    F0R(i,n+1) dp[i][i]=1;
+    for(int s=2; s<=n; s+=2) // size
+    for(int i=0; i<=n-s; i++) // start
+    for(int j=i+1; j<i+s; j+=2) {
+        if (S[j] != S[i]) continue;
+        t = 1LL * dp[i+1][j] * dp[j+1][i+s] % mod;
+        t = 1LL * t * BC[s/2][(j-i+1)/2] % mod;
+        dp[i][i+s] = (dp[i][i+s]+t) % mod;
+    }
+    cout << dp[0][n];
 }

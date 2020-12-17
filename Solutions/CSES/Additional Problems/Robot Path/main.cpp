@@ -17,28 +17,26 @@ using vi = vector<int>;
 #define R0F(i,a) for(int i=(a)-1; i>=0; i--)
 #define ROF(i,a,b) for(int i=(b); i>=a; i--)
 #define trav(a,x) for (auto& a: x)
-
-#include <ext/pb_ds/tree_policy.hpp>
-#include <ext/pb_ds/assoc_container.hpp>
-using namespace __gnu_pbds;
-
-template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+#define gc getchar_unlocked
 
 using pii = pair<ll, ll>;
 using piii = pair<ll, pair<ll,ll> >;
 
 int n;
 pii cur, nex;
-ll dis, x, td;
+ll dis, td; int x;
 char dir;
 multiset<piii> H, V;
 vector<pair<char,ll>>todo;
+
+
 int main() {
     // cerr <<"\n+------ Starting\n"; clock_t startT = clock();
     ios::sync_with_stdio(false); cin.tie(nullptr);
     // freopen("a.in","r",stdin);
 	// freopen("a.out","w",stdout);
-    cin >> n;
+    // cin >> n;
+    scanf("%d\n", &n);
 
     dis = 0;
     cur = {0,0};
@@ -46,7 +44,8 @@ int main() {
     bool flag;
     // ll minX=1e15, minY=1e15, maxX=-1e15, maxY=-1e15;
     while(n--) {
-        cin >> dir >> x;
+        scanf("%c %d\n", &dir, &x);
+        // cin >> dir >> x;
         if(todo.size() && dir==todo.back().f) todo.back().s+=x;
         else todo.pb({dir, x});
     }
@@ -195,5 +194,6 @@ int main() {
     }
     // cerr <<"FINAL dist = "<<dis<<endl;
     // cerr <<"+------ Ending | Time taken: "<<((float)(clock()-startT)/CLOCKS_PER_SEC)<<" seconds \n\n";
-    cout <<dis << endl;
+    // cout <<dis << endl;
+    printf("%lld\n", dis);
 }
