@@ -73,6 +73,7 @@ int IN[maxn], OUT[maxn], ID[maxn];
 // vi in, rin, out, rout;
 vi in,out;
 // Tree<int> T[maxn];
+vi in2[maxn], out2[maxn];
 
 int main() {
     ios::sync_with_stdio(false);
@@ -105,45 +106,87 @@ int main() {
     }
     // cout <<"{";
     using pi = pair<int,int>;
+
     trav(i, S.comps) {
         if(!IN[i]) in.pb(i);
+        else in2[IN[i]].pb(i);
         if(!OUT[i]) out.pb(i);
+        else out2[OUT[i]].pb(i);
     } //cout <<"}\n";
     // cout <<"in: {";trav(x,in) cout<<x<<" "; cout <<"}\n";
     // cout <<"out: {";trav(x,out) cout<<x<<" "; cout <<"}\n";
     cout << max(sz(in), sz(out)) <<"\n";
     int m = max(sz(in),sz(out));
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-    // shuffle(all(in),default_random_engine(seed));
-    // while(1) {
-    int lb = 13e6/n;
-    vector<pi> V;
-    F0R(I,lb) {
-        V.clear();
-
-        shuffle(all(out),default_random_engine(seed));
-        F0R(i,m) {
-            int ii, jj=-1;
-            if(i<sz(in)) ii=i;
-            else ii = rand()%sz(in);
-            if(i<sz(out)) { jj=i; }
-            while(jj==-1 || ID[out[jj]]==ID[in[ii]]) jj = rand()%sz(out);
-            V.pb({ID[out[jj]],ID[in[ii]]});
-            S.ae(ID[out[jj]], ID[in[ii]]);
-            // cout <<"edge: {"<<ID[out[jj]]<<", "<<ID[in[ii]]<<"}\n";
-        }
-        // cout <<"\n";
-        if (S.gen2()) {
-            trav(x, V) {
-                cout << x.f <<" "<< x.s<<"\n";
+    sort(all(in));
+    sort(all(out)); reverse(all(out));
+    vector<pi> V; V.clear();
+    if(sz(in) == sz(out)) {
+        bool ok=true;
+        trav(x, in) {
+            int val=OUT[x];
+            if(!sz(in2[val])) { ok=false; break; }
+            else {
+                V.pb({ID[in2[val].back()], ID[x]});
+                S.ae(ID[in2[val].back()], ID[x]);
+                in2[val].pop_back();
             }
-            return 0;
-        } else {
+        }
+        if(!ok) {
             trav(x, V) {
                 S.adj[x.f].pop_back();
                 S.radj[x.s].pop_back();
             }
+        }
+        else if (S.gen2()) {
+                trav(x, V) {
+                    cout << x.f <<" "<< x.s<<"\n";
+                }
+                return 0;
+            } else {
+                trav(x, V) {
+                    S.adj[x.f].pop_back();
+                    S.radj[x.s].pop_back();
+                }
         };
+    }
+    boi: unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    // shuffle(all(in),default_random_engine(seed));
+    // while(1) {
+    int lb = 13e6/n;
+    // vector<pi> V;
+
+    while(1) {
+        int om=sz(out)/2;
+        shuffle(all(out),default_random_engine(seed));
+        F0R(aweofjaejf,m) {
+            V.clear();
+            int si=0, sm=om;
+            F0R(i,m) {
+                int ii, jj;
+                // if(i<sz(in)) ii=i;
+                // else ii = rand()%sz(in);
+                // if(i<sz(out)) { jj=i; }
+                ii = (i) % sz(in);
+                jj = (i+sm) % sz(out);
+                V.pb({ID[out[jj]],ID[in[ii]]});
+                S.ae(ID[out[jj]], ID[in[ii]]);
+                // cout <<"edge: {"<<ID[out[jj]]<<", "<<ID[in[ii]]<<"}\n";
+            }
+            // cout <<"\n";
+            if (S.gen2()) {
+                trav(x, V) {
+                    cout << x.f <<" "<< x.s<<"\n";
+                }
+                return 0;
+            } else {
+                trav(x, V) {
+                    S.adj[x.f].pop_back();
+                    S.radj[x.s].pop_back();
+                }
+            };
+            om++;
+        }
+
     }
     trav(x, V) {
         cout << x.f <<" "<< x.s<<"\n";
