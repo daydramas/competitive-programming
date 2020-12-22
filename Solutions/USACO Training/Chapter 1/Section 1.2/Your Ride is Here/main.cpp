@@ -1,45 +1,24 @@
-/*
- ID: dongliu3
- TASK: ride
- LANG: C++
- */
-
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <algorithm>
-
+#include "bits/stdc++.h"
 using namespace std;
 
-// define/structures
+string N, M;
 
-// global variables
-
-// functions
-int calcCode(string str) {
-	int cnt = 1;
-	for(int i=0; i<str.size(); i++) {
-		cnt *= str[i]-'A'+1;
-		cnt %= 47;
-	}
-	return cnt;
-}
 int main() {
-	// local variables
 
-	// fstream
 	ifstream fin("ride.in");
 	ofstream fout("ride.out");
 
-	// input
-	string a, b;
-	fin >> a >> b;
+	fin >> N >> M;
 
-	// main
-	if(calcCode(a) == calcCode(b)) fout << "GO" << endl;
-	else fout << "STAY" << endl;
-
-	// output
+	auto code = [](string &S) {
+		int ans = 1;
+		for (char ch : S) ans = (ans * (ch-'A'+1)) % 47;
+		return ans;
+	};
+	if(code(N) == code(M))
+		fout << "GO\n";
+	else
+		fout << "STAY\n";
 
 	return 0;
 }
