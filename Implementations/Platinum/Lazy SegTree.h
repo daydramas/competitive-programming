@@ -1,8 +1,8 @@
 const int maxn = 1e5;
 
 using T = int;
-T st[(maxn+5)*2], lz[(maxn+5)*2];
-T ID=0; T ID=0; T comb(T i, T j) { return i+j; }
+T st[(maxn+5)*4], lz[(maxn+5)*4];
+T ID=0; T comb(T i, T j) { return i+j; }
 void init() {
 	for(int i=0; i<maxn*2; i++) st[i]=lz[i]=ID; }
 void pull(int i) {
