@@ -4,7 +4,7 @@ using T = int;
 T st[(maxn+5)*4], lz[(maxn+5)*4];
 T ID=0; T comb(T i, T j) { return i+j; }
 void init() {
-	for(int i=0; i<maxn*2; i++) st[i]=lz[i]=ID; }
+	for(int i=0; i<maxn*4; i++) st[i]=lz[i]=ID; }
 void pull(int i) {
 	st[i] = comb(st[i*2],st[i*2+1]); }
 void push(int i, int l, int r) {
