@@ -25,7 +25,7 @@ int main() {
         if(!w[i]) Q.push(i); }
     while(Q.size()) {
         int a=Q.front(); Q.pop(); ord.pb(a);
-        for(int b : adj2[a]) if(!(--w[b])){
+        for(int b : adj2[a]) if(!(--w[b])) {
             Q.push(b); }
     }
     for(int a : ord) for(int b : adj2[a])
