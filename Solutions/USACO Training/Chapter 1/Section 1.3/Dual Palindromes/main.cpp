@@ -56,14 +56,18 @@ int main() {
 	// main
 	for (; N > 0; S++) {
 		int P = 0;
+		vector<pair<string,int>> t;
 		for (int i=2; i<=10; i++) {
 			if (palindromic(convert(S, i))) {
 				P++;
+				t.push_back({convert(S, i),i});
 			}
 		}
 		if (P >= 2) {
 			N--;
 			fout << S << endl;
+			for(auto s : t) cout << s.first <<"-"<<s.second<<" | ";
+			cout <<"\n";
 		}
 	}
 	// output

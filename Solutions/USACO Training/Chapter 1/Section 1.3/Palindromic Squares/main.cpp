@@ -1,4 +1,4 @@
-  
+
 /*
  ID: dongliu3
  TASK: palsquare
@@ -24,14 +24,8 @@ char reVal(int num) {
 string convert(int decimal) {
 	string rval = "";
 	while (decimal > 0) {
-		rval = rval + reVal(decimal % B);
+		rval = string(1, reVal(decimal % B)) + rval;
 		decimal /= B;
-	}
-	int len = rval.length();
-	for (int i = 0; i < len / 2; i++) {
-		char temp = rval[i];
-		rval[i] = rval[len - i - 1];
-		rval[len - i - 1] = temp;
 	}
 	return rval;
 }
@@ -52,15 +46,15 @@ int main() {
 	ofstream fout("palsquare.out");
 
 	// input
-	fin >> B;
+	cin >> B;
 	// main
 	for (int i=1; i<=300; i++) {
 		string o = convert(i), os = convert(i*i);
 		if (palindromic(os)) {
-			fout << o << " " << os << endl;
+			cout << o << " " << os << endl;
 		}
 
 	}
-
+	cout <<"100 = "<<convert(100)<<'\n';
 	return 0;
 }
