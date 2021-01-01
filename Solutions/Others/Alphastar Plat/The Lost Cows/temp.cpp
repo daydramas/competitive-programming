@@ -21,7 +21,7 @@ using vi = vector<int>;
 using pi = pair<int,int>;
 using ppi = pair<pi,int>;
 const int maxn = 205;
-int n, m, s[maxn][maxn], w[maxn][maxn]; // s[barn][sign]
+int n, m, s[maxn][maxn], one[maxn], w[maxn][maxn]; // s[barn][sign]
 vector<ppi> v[maxn][maxn];
 bool done[maxn], ndone[maxn];
 queue<pi> Q;
@@ -47,8 +47,14 @@ int main() {
 
     }
     FOR(i,1,n) done[i]=false;
+    queue<int> Q2; Q2.push(1); one[1]=1;
+    while(!Q2.empty()) {
+        int f=Q2.front(); Q2.pop();
+        FOR(i,1,m) FOR(j,1,n) if(!one[j] && s[i][j]==f) {
+            one[j]=i; Q2.push(j); }
+    }
     // while(true) {
-
+    FOR(i,1,n) done[i]=false;
     FOR(IT,1,10) {
         int F, S; F=S=-1;
         FOR(i,1,n) if(!done[i]) {
@@ -57,15 +63,18 @@ int main() {
         }
         if(F==-1) break;
         else if(S==-1) {
-
-            S=1;
+            while(F!=1) {
+                cout << one[F] << endl;
+                F = s[one[F]][F];
+            }
+            break;
         }
         if(F>S) swap(F,S);
         FOR(i,1,n) ndone[i]=true;
         int move = w[F][S];
         FOR(i,1,n) if(!done[i]) ndone[s[move][i]]=false;
         FOR(i,1,n) done[i]=ndone[i];
-        cout << move << '\n';
+        cout << move << endl;
         // cout << "(" << F << ", " << S << ") = " << move << " = ";
         // FOR(i,1,n) cout << done[i];
         // cout <<"\n";
