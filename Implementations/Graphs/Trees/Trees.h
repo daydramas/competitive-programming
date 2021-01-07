@@ -65,7 +65,7 @@ struct tree {
 	int getCentroid(int source, int parent, int size) {
 		for (int child : adj[source])
 			if (source != parent && sz[child] > n/2) return getCentroid(child, source, size);
-		return source;
+		return source;2
 	}
 
 	int centroidDecomp(int source) {
