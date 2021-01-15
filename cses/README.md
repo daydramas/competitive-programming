@@ -1,6 +1,6 @@
-# My CSES Problemset Solutions
+# CSES Problemset Solutions
 - [Problems](https://cses.fi/problemset/)
-- My [CSES Profile](https://cses.fi/user/37667)
+- [My CSES Profile](https://cses.fi/user/37667)
 
 ## Sections
 1. [Introductory Problems](./intro)
