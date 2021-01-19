@@ -42,30 +42,53 @@ namespace IO {
 };
 using namespace IO;
 
-int n, m, *c, x, *r, rr, k, kk; 
+void setIO(string s = "") {
+	cin.tie(0)->sync_with_stdio(0); if (s.size()) {
+		freopen((s+".in").c_str(), "r", stdin);
+		freopen((s+".out").c_str(), "w", stdout); }
+}
+
+void upd(int &gang, int &cow, int ncow) {
+	if(cow == 0) gang = ncow;
+	if (gang == ncow) cow++;
+	else cow--;
+}
+
+int qry(int gang, int cow, vi c) {
+	sort(c.begin() + 1, c.end());
+	while(c.back() > 0) {
+		for(int i=sz(c)-1; i>0; i--) {
+			upd(gang, cow, i); c[i]--;
+			if(c[i-1] <= c[i]) break;
+		}
+	}
+	F0R(i, c[0]) upd(gang, cow, 0);
+	if(gang == 0) return cow;
+	else return 0;
+}
 
 int main() {
 
-	ri(n,m);
-	c = new int[m+1];
-	r = new int[n+1]; rr=0;
-	FOR(i,1,m) ri(c[i]);
-
-	while(n--) {
-		x=-1;
-		FOR(i,2,m) if(c[i] && (x==-1 || c[x]<c[i])) x=i;
-		if(x==-1 || c[1]-1) x=1;
-		if(x==-1) break;
-		r[++rr]=x; c[x]--;
-	}
-	if(n > 0) {
-		ws("NO\n");
+	int n, m; ri(n,m);
+	vi c(m); trav(x,c) ri(x);
+	int gang = 0, cow = 0;
+	int res = qry(gang, cow, c);
+	if(res) {
+		ws("YES\n");
+		wi(res); wc('\n');
+		F0R(it, n) {
+			int ogang = gang, ocow = cow;
+			for(int i=0; ; i++) if(c[i]) {
+				c[i]--;
+				upd(gang, cow, i);
+				if(res == qry(gang, cow, c)) {
+					wi(i+1); wc('\n'); break;
+				}
+				c[i]++;
+				gang = ogang, cow = ocow;
+			}
+		}
 	} else {
-		ws("YES\n"); k=1, kk=1;
-		for(int i=2; i<=rr; i++) 
-			if(r[i]==r[i-1]) k=max(k,++kk);
-			else kk=1;
-		wi(k); wc('\n');
-		for(int i=1; i<=rr; i++) { wi(r[i]); wc('\n'); }
+		ws("NO\n");
 	}
 }
