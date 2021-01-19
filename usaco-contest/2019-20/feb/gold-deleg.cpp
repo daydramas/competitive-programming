@@ -86,9 +86,9 @@ int main() {
 	}
 	dfs(1,1);
 	FOR(i,1,n-1) {
-		if((n-1) % i) cout << 0;
-		else cout << c(i);
+		if((n-1) % i) wi(0);
+		else wi(c[i]);
 	}
-	cout << '\n';
+	wc('\n');
 
 }
