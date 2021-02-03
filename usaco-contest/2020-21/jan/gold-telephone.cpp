@@ -1,51 +1,62 @@
-#pragma GCC optimize ("O3")
-#pragma GCC target ("sse4")
+/*
+============================================================================
+ Name:		Telephone
+ Link:		http://usaco.org/index.php?page=viewproblem2&cpid=1090
+ Author:	Dong Liu
+ Date:		2021-02-03
+============================================================================
+*/
 
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
 
-const int N = 5e4+5;
-const int K = 55;
+using LL = long long;
+using VI = vector<int>;
+using PI = pair<int, int>;
 
-int n, k, t[N];
-vector<int> tg[K], g[K];
+#define F			first
+#define S			second
+#define PB			push_back
+#define ALL(x)		begin(x), end(x)
+#define SZ(x)		int((x).size())
+#define F0R(i,a)	for(int i=0; i<(a); i++)
+#define FOR(i,a,b)	for(int i=(a); i<=(b); i++)
+#define R0F(i,a)	for(int i=(a)-1; i>=0; i--)
+#define ROF(i,a,b)	for(int i=(b); i>=(a); i--)
+#define EACH(a,x)	for (auto& a: x)
 
-int d[N];
 
 int main() {
-	ios_base::sync_with_stdio(0); cin.tie(0);
+	cin.tie(0)->sync_with_stdio(0);
 
+	int n, k;
 	cin >> n >> k;
-	for(int i=1; i<=n; i++) {
-		cin >> t[i];
-		tg[t[i]].push_back(i);
+	VI a(n+1), b[k+1], c[k+1];
+	FOR(i,1,n) { 
+		cin >> a[i];
+		b[a[i]].PB(i);
 	}
-	for(int i=1; i<=k; i++) {
+	FOR(i,1,k) {
 		string s; cin >> s;
-		for(int j=1; j<=k; j++) {
-			if(s[j-1] == '1') {
-				g[i].push_back(j);
+		FOR(j,1,k) if(s[j-1] == '1')
+			c[i].PB(j);
+	}
+	VI dist(n+1, 1e9);
+	dist[1] = 0;
+	priority_queue<PI> pq;
+	pq.push({-0, 1});
+	while(SZ(pq)) {
+		PI x = pq.top(); 
+		x.F = -x.F; pq.pop();
+		if(x.F > dist[x.S]) continue;
+		EACH(y,c[a[x.S]]) EACH(z,b[y]) {
+			int nd = x.F + abs(z - x.S);
+			if(dist[z] > nd) {
+				dist[z] = nd;
+				pq.push({-nd, z});
 			}
 		}
 	}
-	using T = pair<int,int>;
-	priority_queue<T, vector<T>, greater<T>> Q;
-	for(int i=1; i<=n; i++) d[i] = 1e9;
-	d[1] = 0;
-	Q.push({0,1});
-	while(Q.size()) {
-		T f = Q.top(); Q.pop();
-		if(d[f.second] < f.first) continue;
-		for(int i : g[t[f.second]]) {
-			for(int s : tg[i]) {
-				int nd = d[f.second] + abs(f.second-s);
-				if(nd < d[s]) {
-					d[s] = nd;
-					Q.push({nd, s});
-				}
-			}
-		}
-	}
-	if(d[n] == 1e9) cout << "-1\n";
-	else cout << d[n];
+	cout << ( dist[n] == 1e9 ? -1 : dist[n] ) << '\n';
+
 }
