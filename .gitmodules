@@ -1,0 +1,3 @@
+[submodule "templates/algorithms"]
+	path = templates/algorithms
+	url = https://github.com/dongliu0426/cp-algorithms.git
