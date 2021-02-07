@@ -7,6 +7,10 @@
 ============================================================================
  * dp[i][j] = maximum length of common subsequence 
  	* using i characters of s and j characters of t
+ * Transitions:
+ 	* dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+	* if s[i] == t[j] dp[i][j] = dp[i-1][j-1] + 1
+ * Answer: dp[n][m] (then backtrack to find string)
 */
 
 #include <bits/stdc++.h>
