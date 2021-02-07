@@ -2,7 +2,7 @@
 #include <queue>
 using namespace std;
 
-template<int SZ> struct TopoSort {
+struct TopoSort {
 	int N; vector<int> weight;
 	vector<vector<int>> graph; 
 	TopoSort(int N = 0) : N(N), weight(N+1), graph(N+1) {}
