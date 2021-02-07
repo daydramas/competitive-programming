@@ -1,4 +1,3 @@
-
 /*
 ============================================================================
  Name:		${1:problem}
@@ -11,9 +10,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-using LL = long long;
-using VI = vector<int>;
-using PI = pair<int, int>;
+using ll = long long;
+using vi = vector<int>;
+using pi = pair<int, int>;
 
 #define F			first
 #define S			second
@@ -24,7 +23,7 @@ using PI = pair<int, int>;
 #define FOR(i,a,b)	for(int i=(a); i<=(b); i++)
 #define R0F(i,a)	for(int i=(a)-1; i>=0; i--)
 #define ROF(i,a,b)	for(int i=(b); i>=(a); i--)
-#define EACH(a,x)	for (auto& a: x)
+#define EACH(a,x)	for(auto& a: x)
 
 
 int main() {
