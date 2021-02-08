@@ -14,16 +14,17 @@ using ll = long long;
 using vi = vector<int>;
 using pi = pair<int, int>;
 
-#define F first
-#define S second
-#define PB push_back
-#define ALL(x) begin(x), end(x)
-#define SZ(x) int((x).size())
-#define F0R(i,a) for(int i=0; i<(a); i++)
-#define FOR(i,a,b) for(int i=(a); i<=(b); i++)
-#define R0F(i,a) for(int i=(a)-1; i>=0; i--)
-#define ROF(i,a,b) for(int i=(b); i>=(a); i--)
-#define EACH(a,x) for(auto& a: x)
+#define F           first
+#define S           second
+#define PB          push_back
+#define ALL(x)      begin(x), end(x)
+#define SZ(x)       int((x).size())
+#define FOR(i,a,b)  for(int i=(a); i<=(b); i++)
+#define F0R(i,x)    FOR(i,0,(x)-1)
+#define ROF(i,a,b)  for(int i=(b); i>=(a); i--)
+#define R0F(i,x)    ROF(i,0,(x)-1)
+#define REP(x)      F0R(_,x)
+#define EACH(a,x)   for(auto& a: x)
 
 
 int main() {
