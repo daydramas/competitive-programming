@@ -1,15 +1,18 @@
 /*
 ============================================================================
- Name:		Knapsack 1
- Link:		https://atcoder.jp/contests/dp/tasks/dp_d
+ Name:		Frog 2
+ Link:		https://atcoder.jp/contests/dp/tasks/dp_b
  Author:	Dong Liu
  Date:		2021-02-04
 ============================================================================
- * dp[i] = maximum sum of values such that the weight sums up to i
- * base case: dp[0] = 0
+ * dp[i] = minimum cost to reach $i$
+ * base case: dp[1] = 0
  * transitions:
-	* dp[i+w] = max(dp[i] + v)
- * answer: maximum dp value
+	* dp[i+1] = min(dp[i+1], dp[i] + abs(h[i+1] - h[i]))
+	* dp[i+2] = min(dp[i+2], dp[i] + abs(h[i+2] - h[i]))
+	* ...
+	* dp[i+k] = min(dp[i+k], dp[i] + abs(h[i+k] - h[i]))
+ * answer: dp[n]
 ============================================================================
 */
 
@@ -31,18 +34,19 @@ using PI = pair<int, int>;
 #define ROF(i,a,b)	for(int i=(b); i>=(a); i--)
 #define EACH(a,x)	for (auto& a: x)
 
+template<class T> void MIN(T &A, const T &B) {
+	A = (B < A ? B : A); }
 
 int main() {
 	cin.tie(0)->sync_with_stdio(0);
 
-	int n, W; cin >> n >> W;
-	vector<LL> dp(W+1);
-	int w; LL v;
-	while(n--) {
-		cin >> w >> v;
-		ROF(i,0,W) if(i-w >= 0)
-			dp[i] = max(dp[i], dp[i-w] + v);
-	}
-	cout << *max_element(ALL(dp)) << '\n';
+	int n, k; cin >> n >> k;
+	VI a(n); EACH(x,a) cin >> x;
+	VI dp(n,1e9); dp[0] = 0;
+	F0R(i,n) FOR(j,1,k) {
+		if(i+j >= n) break; 
+		MIN(dp[i+j],dp[i]+abs(a[i+j]-a[i]));
+	} 	
+	cout << dp[n-1] << '\n';
 
 }

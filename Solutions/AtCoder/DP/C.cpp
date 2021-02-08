@@ -1,18 +1,19 @@
 /*
 ============================================================================
- Name:		Frog 2
- Link:		https://atcoder.jp/contests/dp/tasks/dp_b
+ Name:		Vacation
+ Link:		https://atcoder.jp/contests/dp/tasks/dp_c
  Author:	Dong Liu
  Date:		2021-02-04
 ============================================================================
- * dp[i] = minimum cost to reach $i$
- * base case: dp[1] = 0
+ * dp[i][a] = maximum happiness ending with using a
+ * dp[i][b] = maximum happiness ending with using b
+ * dp[i][c] = maximum happiness ending with using c
+ * base case: dp[0][a] = dp[0][b] = dp[0][c] = 0
  * transitions:
-	* dp[i+1] = min(dp[i+1], dp[i] + abs(h[i+1] - h[i]))
-	* dp[i+2] = min(dp[i+2], dp[i] + abs(h[i+2] - h[i]))
-	* ...
-	* dp[i+k] = min(dp[i+k], dp[i] + abs(h[i+k] - h[i]))
- * answer: dp[n]
+ 	* dp[i+1][a] = a[i+1] + max(dp[i][b], dp[i][c])
+ 	* dp[i+1][b] = b[i+1] + max(dp[i][a], dp[i][c])
+	* dp[i+1][c] = c[i+1] + max(dp[i][a], dp[i][b])
+ * answer: max(dp[n][a], dp[n][b], dp[n][c])
 ============================================================================
 */
 
@@ -34,19 +35,20 @@ using PI = pair<int, int>;
 #define ROF(i,a,b)	for(int i=(b); i>=(a); i--)
 #define EACH(a,x)	for (auto& a: x)
 
-template<class T> void MIN(T &A, const T &B) {
-	A = (B < A ? B : A); }
 
 int main() {
 	cin.tie(0)->sync_with_stdio(0);
 
-	int n, k; cin >> n >> k;
-	VI a(n); EACH(x,a) cin >> x;
-	VI dp(n,1e9); dp[0] = 0;
-	F0R(i,n) FOR(j,1,k) {
-		if(i+j >= n) break; 
-		MIN(dp[i+j],dp[i]+abs(a[i+j]-a[i]));
-	} 	
-	cout << dp[n-1] << '\n';
+	int n; cin >> n;
+	int A, B, C, a, b, c;
+	cin >> A >> B >> C;
+	F0R(i,n-1) {
+		cin >> a >> b >> c;
+		int X = a + max(B, C);
+		int Y = b + max(A, C);
+		int Z = c + max(A, B);
+		A = X, B = Y, C = Z;
+	}
+	cout << max({A, B, C}) << '\n';
 
 }

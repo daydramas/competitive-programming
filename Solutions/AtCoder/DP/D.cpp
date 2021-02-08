@@ -1,15 +1,15 @@
 /*
 ============================================================================
- Name:		Knapsack 2
- Link:		https://atcoder.jp/contests/dp/tasks/dp_e
+ Name:		Knapsack 1
+ Link:		https://atcoder.jp/contests/dp/tasks/dp_d
  Author:	Dong Liu
  Date:		2021-02-04
 ============================================================================
- * dp[i] = minimum sum of weights to form value i
- * base case: dp[0] = 0, dp[i] = inf
- * transitions
-	* dp[i+v = min(dp[i+v], dp[i]+w)
- * answer: maximum index such that dp[i] <= W
+ * dp[i] = maximum sum of values such that the weight sums up to i
+ * base case: dp[0] = 0
+ * transitions:
+	* dp[i+w] = max(dp[i] + v)
+ * answer: maximum dp value
 ============================================================================
 */
 
@@ -36,16 +36,13 @@ int main() {
 	cin.tie(0)->sync_with_stdio(0);
 
 	int n, W; cin >> n >> W;
-	vector<LL> dp(100001, 1e9+7); dp[0] = 0;
-	LL w; int v;
+	vector<LL> dp(W+1);
+	int w; LL v;
 	while(n--) {
 		cin >> w >> v;
-		R0F(i,100001) if(i-v >= 0) {
-			dp[i] = min(dp[i], dp[i-v] + w);
-		}
+		ROF(i,0,W) if(i-w >= 0)
+			dp[i] = max(dp[i], dp[i-w] + v);
 	}
-	int ans = 0;
-	F0R(i,100001) if(dp[i] <= W) ans = max(ans, i);
-	cout << ans << '\n';
+	cout << *max_element(ALL(dp)) << '\n';
 
 }
