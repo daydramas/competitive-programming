@@ -19,9 +19,9 @@ using pi = pair<int, int>;
 #define PB          push_back
 #define ALL(x)      begin(x), end(x)
 #define SZ(x)       int((x).size())
-#define FOR(i,a,b)  for(int i=(a); i<=(b); i++)
+#define FOR(i,a,b)  for(int i=(a); i<=(b); ++i)
 #define F0R(i,x)    FOR(i,0,(x)-1)
-#define ROF(i,a,b)  for(int i=(b); i>=(a); i--)
+#define ROF(i,a,b)  for(int i=(b); i>=(a); --i)
 #define R0F(i,x)    ROF(i,0,(x)-1)
 #define REP(x)      F0R(_,x)
 #define EACH(a,x)   for(auto& a: x)
