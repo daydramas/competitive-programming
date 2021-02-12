@@ -23,11 +23,3 @@ int main() {
 	}
 	cout << x.size() << '\n';
 }
-
-namespace IO {
-	template<class T> void read(T& x) { cin >> x; }
-	template<class T, class... U> void read(T& x, U&... y) { read(x); read(y) };
-	template<class T> void print(T& x) { cout << x; }
-	template<class T, class... U> void print(T& x, U&... y) { print(x); print(y); } 
-
-};
