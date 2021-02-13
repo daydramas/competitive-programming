@@ -1,9 +1,9 @@
 /*
 ============================================================================
- Name:		problem
- Link:		link
- Author:	Dong Liu
- Date:		2021-02-11
+Name:		problem
+Link:		link
+Author:	Dong Liu
+Date:		2021-02-11
 ============================================================================
 */
 
@@ -54,37 +54,37 @@ inline namespace IO {
 };
 
 int main() {
-    cin.tie(0)->sync_with_stdio(0);
+	cin.tie(0)->sync_with_stdio(0);
 
-    int t; 
-    read(t);
-    // t = 1;
-    REP(t) {
-        ll a, b; read(a, b);
-        ll ans = 0, ans2 = 0;
-        if(b == 1) b++, ans2++;
-        // while(a) {
-        long double A = log2(1.0 * a);
-        long double B = log2(1.0 * b);
-        long double C = A / B;
-        C += ans2;
-        while(1) {
-            b++; ans2++;
-            long double BB = log2(1.0 * b);
-            long double CC = A / BB;
+	int t; 
+	read(t);
+	// t = 1;
+	REP(t) {
+		ll a, b; read(a, b);
+		ll ans = 0, ans2 = 0;
+		if(b == 1) b++, ans2++;
+		// while(a) {
+		long double A = log2(1.0 * a);
+		long double B = log2(1.0 * b);
+		long double C = A / B;
+		C += ans2;
+		while(1) {
+			b++; ans2++;
+			long double BB = log2(1.0 * b);
+			long double CC = A / BB;
 
-            if (CC+ans2>C) break;
-            else C=CC+ans2;
-        }
-        b--;
-        while(a/b){
-            ans2++;
-            a=a/b;
-        }
-  
-        print(ans2);
-        
-        // }
-        // print(ans);
-    }
+			if (CC+ans2>C) break;
+			else C=CC+ans2;
+		}
+		b--;
+		while(a/b){
+			ans2++;
+			a=a/b;
+		}
+
+		print(ans2);
+		
+		// }
+		// print(ans);
+	}
 }

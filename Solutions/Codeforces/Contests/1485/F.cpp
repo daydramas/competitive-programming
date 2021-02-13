@@ -1,5 +1,11 @@
-  #pragma GCC optimize ("O3")
-#pragma GCC target ("sse4")
+/*
+============================================================================
+ Name:		problem
+ Link:		link
+ Author:	Dong Liu
+ Date:		2021-02-12
+============================================================================
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -47,24 +53,21 @@ inline namespace IO {
 	#define debug(...) cout << "LINE(" << __LINE__ << ") => [" << #__VA_ARGS__ << "]: [", pdebug(__VA_ARGS__)
 };
 
+const int mod = 1e9+7;
+
 int main() {
 	cin.tie(0)->sync_with_stdio(0);
-	const int MOD = 1e9+7;
+
 	int t; read(t);
 	REP(t) {
 		int n; read(n);
-		int a[n+1]{}; FOR(i,1,n) read(a[i]);
-		ll last = 1;
-		ll ps = 0;
-		FOR(i,1,n) {
-			// ll cur = last;
-			// last += last;
-			ps += a[i];
-			if(ps != a[i]) last += last;
+		map<ll, ll> m; 
+		m[0]=1; ll x, a=0, s=0, r=1;
+		F0R(i,n) {
+			read(x); a=m[s]; m[s]=r; s-=x;
+			r = (2 * r - a + mod) % mod;
 		}
-		ll ans = 0;
-		// EACH(x, M) ans = ( ans + x.second ) % MOD;
-		print(ans + last);
+		print(r);
 	}
 
 }

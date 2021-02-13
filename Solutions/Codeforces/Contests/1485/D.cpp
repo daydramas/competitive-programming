@@ -3,7 +3,7 @@
  Name:		problem
  Link:		link
  Author:	Dong Liu
- Date:		2021-02-11
+ Date:		2021-02-12
 ============================================================================
 */
 
@@ -56,29 +56,15 @@ inline namespace IO {
 int main() {
 	cin.tie(0)->sync_with_stdio(0);
 
-	int n, m; read(n, m);
-	ll a[n+1][m+1];
-	ll ff = 1;
-	FOR(i,1,n) FOR(j,1,m) {
-		read(a[i][j]);
-		ll com = __gcd(a[i][j], ff);
-		ff = ff * a[i][j] / com;
-	}
-	ll gg = ff + ff * ff;
-	ll color[n+1][m+1]{};
-	// memset(color, 0, sizeof(color));
-	FOR(i,1,n) FOR(j,1,m) {
-		if(i & 1) {
-			if(j & 1) color[i][j] = ff;
-			else color[i][j] = gg;
-		} else {
-			if(j & 1) color[i][j] = gg;
-			else color[i][j] = ff;
+	int n, m, x; 
+	read(n, m);
+	F0R(i,n) {
+		F0R(j,m) {
+			read(x);
+			if(i%2 == j%2) write(720720);
+			else write(720720 + x*x*x*x);
+			write(' ');
 		}
-	}
-	FOR(i,1,n) {
-		FOR(j,1,m) write(color[i][j], " ");
 		write('\n');
 	}
-
 }

@@ -3,7 +3,7 @@
  Name:		problem
  Link:		link
  Author:	Dong Liu
- Date:		2021-02-11
+ Date:		2021-02-12
 ============================================================================
 */
 
@@ -56,6 +56,13 @@ inline namespace IO {
 int main() {
 	cin.tie(0)->sync_with_stdio(0);
 
-	
+	int t; read(t);
+	REP(t) {
+		ll x, y; read(x, y);
+		ll ans = 0;
+		for(ll i=1; i*i<x; i++)
+			ans += max(0LL, min(y,x/i-1)-i);
+		print(ans);
+	}
 
 }
