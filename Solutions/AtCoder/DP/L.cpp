@@ -9,7 +9,6 @@ Date:		2021-02-13
 
 #include <iostream>
 using namespace std;
-using ll = long long;
 
 #define LL long long
 #define N 3000
