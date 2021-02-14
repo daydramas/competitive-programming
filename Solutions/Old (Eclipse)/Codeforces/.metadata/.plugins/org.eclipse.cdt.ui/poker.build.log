@@ -1,0 +1,15 @@
+07:50:42 **** Incremental Build of configuration Debug for project poker ****
+make all 
+Building file: ../src/poker.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/poker.d" -MT"src/poker.o" -o "src/poker.o" "../src/poker.cpp"
+Finished building: ../src/poker.cpp
+ 
+Building target: poker
+Invoking: MacOS X C++ Linker
+g++  -o "poker"  ./src/poker.o   
+Finished building target: poker
+ 
+
+07:50:43 Build Finished. 0 errors, 0 warnings. (took 1s.286ms)
+

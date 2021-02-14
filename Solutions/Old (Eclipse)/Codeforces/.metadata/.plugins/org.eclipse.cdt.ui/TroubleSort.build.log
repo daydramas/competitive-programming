@@ -1,0 +1,6 @@
+08:09:37 **** Incremental Build of configuration Debug for project TroubleSort ****
+make all 
+make: Nothing to be done for `all'.
+
+08:09:37 Build Finished. 0 errors, 0 warnings. (took 76ms)
+

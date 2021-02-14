@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// structures and defines
+#define MOD 1000000007
+// global variables
+
+ifstream fin ("input.in");
+
+// functions
+bool check(string str) {
+	int val = -1;
+	for (int i=0; i<str.size(); i++) {
+		if (val == -1) {
+			val = str[i];
+		} else if (val != str[i]) {
+			return false;
+		}
+	}
+	return true;
+}
+void solve(int t) {
+	int N, M; string S;
+	fin >> N >> M >> S;
+	long long ans;
+	if (M > N) {
+		ans = (1<<N)%MOD;
+	} else {
+		long long dp[N+1];
+		dp[0] = 1;
+		for (int i=1; i<M; i++) dp[i] = (dp[i-1]*2) % MOD;
+		for (int i=M; i<=N; i++) {
+			dp[i] = 0;
+			for (int j=0; j<=(i-M); j++) {
+				dp[i] = (dp[i] + (dp[j]*2)-2 + MOD) % MOD;
+			}
+		}
+		ans = dp[N];
+	}
+
+	cout<< "Case #"<<t<<": " << ans << endl;
+}
+
+int main() {
+	// local variables
+	int T;
+
+	// input
+	fin >> T;
+
+	// main
+	for (int i=1; i<=T; i++) solve(i);
+	// output
+
+	return 0;
+}

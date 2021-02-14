@@ -1,0 +1,15 @@
+07:42:08 **** Incremental Build of configuration Debug for project Matrix ****
+make all 
+Building file: ../src/Matrix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Matrix.d" -MT"src/Matrix.o" -o "src/Matrix.o" "../src/Matrix.cpp"
+Finished building: ../src/Matrix.cpp
+ 
+Building target: Matrix
+Invoking: MacOS X C++ Linker
+g++  -o "Matrix"  ./src/Matrix.o   
+Finished building target: Matrix
+ 
+
+07:42:09 Build Finished. 0 errors, 0 warnings. (took 889ms)
+

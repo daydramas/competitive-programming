@@ -1,0 +1,15 @@
+09:03:29 **** Incremental Build of configuration Debug for project evenPicture ****
+make all 
+Building file: ../src/evenPicture.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/evenPicture.d" -MT"src/evenPicture.o" -o "src/evenPicture.o" "../src/evenPicture.cpp"
+Finished building: ../src/evenPicture.cpp
+ 
+Building target: evenPicture
+Invoking: MacOS X C++ Linker
+g++  -o "evenPicture"  ./src/evenPicture.o   
+Finished building target: evenPicture
+ 
+
+09:03:30 Build Finished. 0 errors, 0 warnings. (took 1s.212ms)
+

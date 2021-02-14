@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ThreeBlocksPalindrome(A)&apos; to &apos;ThreeBlocksPalindromeA&apos;" description="Rename resource &apos;ThreeBlocksPalindrome(A)&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/ThreeBlocksPalindrome(A)" name="ThreeBlocksPalindromeA" stamp="1586791546438" updateReferences="true"/>
+</session>

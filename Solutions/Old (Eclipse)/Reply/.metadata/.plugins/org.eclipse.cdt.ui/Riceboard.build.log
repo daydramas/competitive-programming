@@ -1,0 +1,6 @@
+22:15:50 **** Incremental Build of configuration Debug for project Riceboard ****
+make all 
+make: Nothing to be done for `all'.
+
+22:15:50 Build Finished. 0 errors, 0 warnings. (took 74ms)
+

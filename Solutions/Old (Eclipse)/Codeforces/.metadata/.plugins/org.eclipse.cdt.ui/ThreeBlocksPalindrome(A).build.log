@@ -1,0 +1,17 @@
+08:25:18 **** Build of configuration Debug for project ThreeBlocksPalindrome(A) ****
+make all 
+Building file: ../src/ThreeBlocksPalindrome(A).cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ThreeBlocksPalindrome(A).d" -MT"src/ThreeBlocksPalindrome(A).d" -o "src/ThreeBlocksPalindrome(A).o" "../src/ThreeBlocksPalindrome(A).cpp"
+Finished building: ../src/ThreeBlocksPalindrome(A).cpp
+ 
+Building target: ThreeBlocksPalindrome
+Invoking: MacOS X C++ Linker
+g++  -o "ThreeBlocksPalindrome(A)"  ./src/ThreeBlocksPalindrome(A).o   
+/bin/sh: -c: line 0: syntax error near unexpected token `('
+/bin/sh: -c: line 0: `g++  -o "ThreeBlocksPalindrome(A)"  ./src/ThreeBlocksPalindrome(A).o   '
+make: *** [ThreeBlocksPalindrome(A)] Error 2
+"make all" terminated with exit code 2. Build might be incomplete.
+
+08:25:19 Build Failed. 1 errors, 0 warnings. (took 951ms)
+

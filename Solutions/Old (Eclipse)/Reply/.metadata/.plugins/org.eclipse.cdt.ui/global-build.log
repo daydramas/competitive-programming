@@ -1,0 +1,750 @@
+19:24:50 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+Building file: ../src/T9.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/T9.d" -MT"src/T9.o" -o "src/T9.o" "../src/T9.cpp"
+../src/T9.cpp:53:18: warning: array subscript is of type 'char' [-Wchar-subscripts]
+                for (auto j : v[sir[L]]) //v[sir[L]] = the vector of letters that corrsepond to the Lth number in the string
+                               ^~~~~~~
+../src/T9.cpp:65:19: warning: array subscript is of type 'char' [-Wchar-subscripts]
+                        for (auto j : v[sir[i]]) //iterate through array of corrseponding letters for number
+                                       ^~~~~~~
+../src/T9.cpp:68:20: warning: array subscript is of type 'char' [-Wchar-subscripts]
+                                for (auto k : v[sir[i + 1]]) //iterate through similar array of next number
+                                               ^~~~~~~~~~~
+../src/T9.cpp:5:11: warning: unused variable 'INF' [-Wunused-const-variable]
+const int INF = 1 << 30;
+          ^
+4 warnings generated.
+Finished building: ../src/T9.cpp
+ 
+Building target: T9
+Invoking: MacOS X C++ Linker
+g++  -o "T9"  ./src/T9.o   
+Finished building target: T9
+ 
+19:24:54 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:37:48 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:37:57 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:38:00 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:38:02 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:38:03 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:38:53 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:47:08 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+Building file: ../src/T9.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/T9.d" -MT"src/T9.o" -o "src/T9.o" "../src/T9.cpp"
+../src/T9.cpp:53:18: warning: array subscript is of type 'char' [-Wchar-subscripts]
+                for (auto j : v[sir[L]]) //v[sir[L]] = the vector of letters that corrsepond to the Lth number in the string
+                               ^~~~~~~
+../src/T9.cpp:65:19: warning: array subscript is of type 'char' [-Wchar-subscripts]
+                        for (auto j : v[sir[i]]) //iterate through array of corrseponding letters for number
+                                       ^~~~~~~
+../src/T9.cpp:68:20: warning: array subscript is of type 'char' [-Wchar-subscripts]
+                                for (auto k : v[sir[i + 1]]) //iterate through similar array of next number
+                                               ^~~~~~~~~~~
+../src/T9.cpp:5:11: warning: unused variable 'INF' [-Wunused-const-variable]
+const int INF = 1 << 30;
+          ^
+4 warnings generated.
+Finished building: ../src/T9.cpp
+ 
+Building target: T9
+Invoking: MacOS X C++ Linker
+g++  -o "T9"  ./src/T9.o   
+Finished building target: T9
+ 
+19:49:09 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:51:09 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:52:22 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:53:06 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:53:08 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:54:13 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:55:06 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:55:16 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:55:17 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:56:03 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+Building file: ../src/T9.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/T9.d" -MT"src/T9.o" -o "src/T9.o" "../src/T9.cpp"
+../src/T9.cpp:53:18: warning: array subscript is of type 'char' [-Wchar-subscripts]
+                for (auto j : v[sir[L]]) //v[sir[L]] = the vector of letters that corrsepond to the Lth number in the string
+                               ^~~~~~~
+../src/T9.cpp:65:19: warning: array subscript is of type 'char' [-Wchar-subscripts]
+                        for (auto j : v[sir[i]]) //iterate through array of corrseponding letters for number
+                                       ^~~~~~~
+../src/T9.cpp:68:20: warning: array subscript is of type 'char' [-Wchar-subscripts]
+                                for (auto k : v[sir[i + 1]]) //iterate through similar array of next number
+                                               ^~~~~~~~~~~
+../src/T9.cpp:5:11: warning: unused variable 'INF' [-Wunused-const-variable]
+const int INF = 1 << 30;
+          ^
+4 warnings generated.
+Finished building: ../src/T9.cpp
+ 
+Building target: T9
+Invoking: MacOS X C++ Linker
+g++  -o "T9"  ./src/T9.o   
+Finished building target: T9
+ 
+19:56:12 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+19:57:42 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+Building file: ../src/T9.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/T9.d" -MT"src/T9.o" -o "src/T9.o" "../src/T9.cpp"
+../src/T9.cpp:53:18: warning: array subscript is of type 'char' [-Wchar-subscripts]
+                for (auto j : v[sir[L]]) //v[sir[L]] = the vector of letters that corrsepond to the Lth number in the string
+                               ^~~~~~~
+../src/T9.cpp:65:19: warning: array subscript is of type 'char' [-Wchar-subscripts]
+                        for (auto j : v[sir[i]]) //iterate through array of corrseponding letters for number
+                                       ^~~~~~~
+../src/T9.cpp:68:20: warning: array subscript is of type 'char' [-Wchar-subscripts]
+                                for (auto k : v[sir[i + 1]]) //iterate through similar array of next number
+                                               ^~~~~~~~~~~
+../src/T9.cpp:5:11: warning: unused variable 'INF' [-Wunused-const-variable]
+const int INF = 1 << 30;
+          ^
+4 warnings generated.
+Finished building: ../src/T9.cpp
+ 
+Building target: T9
+Invoking: MacOS X C++ Linker
+g++  -o "T9"  ./src/T9.o   
+Finished building target: T9
+ 
+19:58:54 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+20:29:20 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+09:32:36 **** Incremental Build of configuration Debug for project T9 ****
+make all 
+make: Nothing to be done for `all'.
+09:33:07 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+../src/Password.cpp:42:4: warning: variable 'ans' is uninitialized when used here [-Wuninitialized]
+                        ans -= sum;
+                        ^~~
+../src/Password.cpp:25:15: note: initialize the variable 'ans' to silence this warning
+        long long ans;
+                     ^
+                      = 0
+2 warnings generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:33:43 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:34:11 **** Incremental Build of configuration Debug for project Password ****
+make all 
+make: Nothing to be done for `all'.
+09:34:44 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:35:55 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:42:47 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:42:51 **** Incremental Build of configuration Debug for project Password ****
+make all 
+make: Nothing to be done for `all'.
+09:43:10 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:47:24 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:47:40 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:48:02 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:48:25 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:50:25 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:50:34 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:50:41 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:52:54 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+09:53:06 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+10:12:26 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+10:12:46 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+10:13:09 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:30:8: warning: unused variable 'c' [-Wunused-variable]
+                bool c = check(S);
+                     ^
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+10:15:43 **** Incremental Build of configuration Debug for project Password ****
+make all 
+make: Nothing to be done for `all'.
+10:20:52 **** Incremental Build of configuration Debug for project Password ****
+make all 
+make: Nothing to be done for `all'.
+10:50:11 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+10:50:25 **** Incremental Build of configuration Debug for project Password ****
+make all 
+make: Nothing to be done for `all'.
+10:50:35 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+10:53:17 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+10:53:23 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+10:53:30 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+10:53:55 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+10:54:03 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+10:54:20 **** Incremental Build of configuration Debug for project Password ****
+make all 
+make: Nothing to be done for `all'.
+11:30:16 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:48:6: warning: variable 'ans' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
+        if (M > N) {
+            ^~~~~
+../src/Password.cpp:53:30: note: uninitialized use occurs here
+        cout<< "Case #"<<t<<": " << ans << endl;
+                                    ^~~
+../src/Password.cpp:48:2: note: remove the 'if' if its condition is always true
+        if (M > N) {
+        ^~~~~~~~~~~
+../src/Password.cpp:47:15: note: initialize the variable 'ans' to silence this warning
+        long long ans;
+                     ^
+                      = 0
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+11:30:31 **** Incremental Build of configuration Debug for project Password ****
+make all 
+make: Nothing to be done for `all'.
+11:43:20 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+../src/Password.cpp:58:41: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+                                ans = (ans - ((1<<X)%MOD)*((1<<(M-K)-1)%MOD)*(1<<(Y-K))%MOD + MOD)%MOD;
+                                                             ~~~~~~~^~
+../src/Password.cpp:58:41: note: place parentheses around the '-' expression to silence this warning
+                                ans = (ans - ((1<<X)%MOD)*((1<<(M-K)-1)%MOD)*(1<<(Y-K))%MOD + MOD)%MOD;
+                                                                    ^
+                                                               (      )
+1 warning generated.
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+11:43:42 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+11:44:03 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+12:01:28 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+12:02:01 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+12:02:09 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+12:02:19 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+12:05:39 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+12:06:03 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+12:07:47 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+12:07:58 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+12:09:16 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 
+12:10:22 **** Incremental Build of configuration Debug for project Password ****
+make all 
+Building file: ../src/Password.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Password.d" -MT"src/Password.o" -o "src/Password.o" "../src/Password.cpp"
+Finished building: ../src/Password.cpp
+ 
+Building target: Password
+Invoking: MacOS X C++ Linker
+g++  -o "Password"  ./src/Password.o   
+Finished building target: Password
+ 

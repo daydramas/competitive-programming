@@ -1,0 +1,66 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// structures and defines
+#define pii pair<int, int>
+#define MAXN 1000000000
+
+// global variables
+
+// functions
+void solve(int t) {
+
+	int N, M, X, C[1000];
+	vector<pii> adj[1000];
+
+	int dist[1000][101];
+
+
+	for (int i=0; i<N; i++) cin >> C[i];
+	for (int i=0; i<M; i++) {
+		int a, b, c; cin >> a >> b >> c;
+		adj[a].push_back(pii(b, c));
+		adj[b].push_back(pii(a, c));
+	}
+
+	for (int i=0; i<N; i++) for (int j=0; j<=X; j++)
+		dist[i][j] = MAXN;
+
+	dist[0][0] = 0;
+	queue<pii> Q; Q.push(pii(0, 0));
+	while(!Q.empty()) {
+		pii f = Q.front(); Q.pop();
+
+		// party
+		if (f.second != X && dist[f.first][f.second]+C[f.first] < dist[f.first][f.second+1]) {
+			dist[f.first][f.second+1] = dist[f.first][f.second]+C[f.first];
+			Q.push(pii(f.first, f.second+1));
+		}
+		// visit
+		for (pii d : adj[f.first]) {
+			int nd = dist[f.first][f.second] + d.second;
+			if (nd < dist[d.first][f.second]) {
+				dist[d.first][f.second] = nd;
+				Q.push(pii(d.first, f.second));
+			}
+		}
+
+	}
+	cout << dist[0][X] << endl;
+}
+int main() {
+	// local variables
+	int T;
+
+	// input
+	cin >> T;
+
+	// main
+	for (int i=1; i<=T; i++) {
+		solve(i);
+	}
+
+	// output
+
+	return 0;
+}

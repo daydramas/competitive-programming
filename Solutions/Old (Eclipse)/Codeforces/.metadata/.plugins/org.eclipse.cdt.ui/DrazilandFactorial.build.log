@@ -1,0 +1,15 @@
+22:15:42 **** Incremental Build of configuration Debug for project DrazilandFactorial ****
+make all 
+Building file: ../src/DrazilandFactorial.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DrazilandFactorial.d" -MT"src/DrazilandFactorial.o" -o "src/DrazilandFactorial.o" "../src/DrazilandFactorial.cpp"
+Finished building: ../src/DrazilandFactorial.cpp
+ 
+Building target: DrazilandFactorial
+Invoking: MacOS X C++ Linker
+g++  -o "DrazilandFactorial"  ./src/DrazilandFactorial.o   
+Finished building target: DrazilandFactorial
+ 
+
+22:15:43 Build Finished. 0 errors, 0 warnings. (took 880ms)
+

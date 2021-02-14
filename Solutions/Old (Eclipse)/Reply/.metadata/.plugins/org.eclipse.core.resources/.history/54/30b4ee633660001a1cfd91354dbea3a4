@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// structures and defines
+#define
+// global variables
+
+// functions
+void solve() {
+
+}
+int main() {
+	// local variables
+
+	// input
+	cin >> T;
+	for (int i=0; i<T; i++) {
+		solve();
+	}
+	return 0;
+}

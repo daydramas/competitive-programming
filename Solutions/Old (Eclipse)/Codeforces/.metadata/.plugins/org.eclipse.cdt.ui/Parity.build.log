@@ -1,0 +1,6 @@
+08:14:21 **** Incremental Build of configuration Debug for project Parity ****
+make all 
+make: Nothing to be done for `all'.
+
+08:14:21 Build Finished. 0 errors, 0 warnings. (took 172ms)
+

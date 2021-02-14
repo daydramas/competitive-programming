@@ -1,0 +1,15 @@
+07:48:26 **** Incremental Build of configuration Debug for project LevelStatistics ****
+make all 
+Building file: ../src/LevelStatistics.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LevelStatistics.d" -MT"src/LevelStatistics.o" -o "src/LevelStatistics.o" "../src/LevelStatistics.cpp"
+Finished building: ../src/LevelStatistics.cpp
+ 
+Building target: LevelStatistics
+Invoking: MacOS X C++ Linker
+g++  -o "LevelStatistics"  ./src/LevelStatistics.o   
+Finished building target: LevelStatistics
+ 
+
+07:48:27 Build Finished. 0 errors, 0 warnings. (took 834ms)
+

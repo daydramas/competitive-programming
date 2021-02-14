@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// structures and defines
+
+// global variables
+int T;
+
+// functions
+
+int main() {
+	// local variables
+
+	// input
+
+	// main
+
+	// output
+
+	return 0;
+}

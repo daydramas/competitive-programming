@@ -1,0 +1,6 @@
+09:44:23 **** Incremental Build of configuration Debug for project MonopoleMagnets ****
+make all 
+make: Nothing to be done for `all'.
+
+09:44:23 Build Finished. 0 errors, 0 warnings. (took 81ms)
+

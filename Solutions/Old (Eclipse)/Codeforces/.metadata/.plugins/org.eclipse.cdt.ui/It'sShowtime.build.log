@@ -1,0 +1,9 @@
+07:52:49 **** Incremental Build of configuration Debug for project It'sShowtime ****
+make all 
+/bin/sh: -c: line 0: unexpected EOF while looking for matching `''
+/bin/sh: -c: line 1: syntax error: unexpected end of file
+make: *** [src/It'sShowtime.o] Error 2
+"make all" terminated with exit code 2. Build might be incomplete.
+
+07:52:49 Build Failed. 1 errors, 0 warnings. (took 138ms)
+

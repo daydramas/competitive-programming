@@ -1,0 +1,19 @@
+07:40:39 **** Incremental Build of configuration Debug for project sum ****
+make all 
+Building file: ../src/sum.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/sum.d" -MT"src/sum.o" -o "src/sum.o" "../src/sum.cpp"
+../src/sum.cpp:22:16: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for (string i : ans) cout << i <<" ";
+                      ^
+1 warning generated.
+Finished building: ../src/sum.cpp
+ 
+Building target: sum
+Invoking: MacOS X C++ Linker
+g++  -o "sum"  ./src/sum.o   
+Finished building target: sum
+ 
+
+07:40:40 Build Finished. 0 errors, 1 warnings. (took 1s.328ms)
+
