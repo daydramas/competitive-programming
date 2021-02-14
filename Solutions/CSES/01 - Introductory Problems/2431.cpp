@@ -12,12 +12,13 @@ using namespace std;
 using LL = long long;
 
 int digit(LL n, int i) {
-	if(i == 0) return n % 10;
+	if (i == 0)
+		return n % 10;
 	return digit(n / 10, i - 1);
 }
 int query(LL n) {
 	LL l = 1, p = 1;
-	while(n > p * 9 * l) {
+	while (n > p * 9 * l) {
 		n -= p * 9 * l;
 		l++, p *= 10;
 	}
@@ -27,10 +28,12 @@ int query(LL n) {
 int main() {
 	cin.tie(NULL);
 	ios_base::sync_with_stdio(false);
-	
-	int q; cin >> q;
-	while(q--) {
-		LL n; cin >> n;
+
+	int q;
+	cin >> q;
+	while (q--) {
+		LL n;
+		cin >> n;
 		cout << query(n) << '\n';
 	}
 }

@@ -1,7 +1,7 @@
 /**
  * CSES Trailing Zeros
  * https://cses.fi/problemset/task/1618
-*/
+ */
 
 #include <iostream>
 using namespace std;
@@ -13,8 +13,8 @@ int main() {
 	static int n, pow = 5;
 	static long long ans = 0;
 	cin >> n;
-	
-	while(pow <= n) {
+
+	while (pow <= n) {
 		ans += 1LL * n / pow;
 		pow *= 5;
 	}

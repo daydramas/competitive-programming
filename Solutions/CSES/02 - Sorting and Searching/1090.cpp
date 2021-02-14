@@ -1,9 +1,9 @@
 /*
 ============================================================================
- Name:		CSES Distinct Numbers
- Link:		https://cses.fi/problemset/task/1621
+ Name:		CSES Ferris Wheel
+ Link:		https://cses.fi/problemset/task/1090
  Author:	Dong Liu
- Date:		2021-02-04
+ Date:		2021-02-13
 ============================================================================
 */
 
@@ -14,18 +14,21 @@ using namespace std;
 #define N (1 << 18) // 2e5
 
 int main() {
-	cin.tie(NULL);
-	ios_base::sync_with_stdio(false);
+	cin.tie(0)->sync_with_stdio(0);
 
-	static int n, a[N];
-
-	cin >> n;
-	for (int i = 0; i < n; i++)
+	static int n, x, a[N];
+	cin >> n >> x;
+	for (int i = 0; i < n; ++i)
 		cin >> a[i];
-
 	sort(a, a + n);
-	int ans = 1;
-	for (int i = 1; i < n; i++)
-		ans += a[i] != a[i - 1];
+	int ans = 0, lo = 0, hi = n - 1;
+	while (lo <= hi) {
+		if (a[lo] + a[hi] <= x) {
+			++lo, --hi, ++ans;
+		} else {
+			--hi, ++ans;
+		}
+	}
+
 	cout << ans << '\n';
 }

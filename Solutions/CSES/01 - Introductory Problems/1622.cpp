@@ -1,14 +1,14 @@
 /**
  * CSES Creating Strings
  * https://cses.fi/problemset/task/1622/
-*/
+ */
 
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <string>
 using namespace std;
 
-#define N	40320
+#define N 40320
 
 int main() {
 	ios_base::sync_with_stdio(false);
@@ -21,10 +21,10 @@ int main() {
 	sort(s.begin(), s.end());
 	do {
 		a[n++] = s;
-	} while(next_permutation(s.begin(), s.end()));
-	
+	} while (next_permutation(s.begin(), s.end()));
+
 	cout << n << '\n';
-	for(int i=0; i<n; i++) {
+	for (int i = 0; i < n; i++) {
 		cout << a[i] << '\n';
 	}
 }
