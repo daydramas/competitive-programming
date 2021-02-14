@@ -18,7 +18,7 @@ int main() {
 	cin.tie(0)->sync_with_stdio(0);
 
 	static int n;
-	static LL a[N]; 
+	static LL a[N];
 	cin >> n;
 	for (int i = 0; i < n; ++i)
 		cin >> a[i];
@@ -28,6 +28,7 @@ int main() {
 			if (l == r)
 				dp[l][r] = a[l];
 			else
-				dp[l][r] = max(a[l] - dp[l + 1][r], a[r] - dp[l][r - 1]);
+				dp[l][r] = max(a[l] - dp[l + 1][r],
+					       a[r] - dp[l][r - 1]);
 	cout << dp[0][n - 1] << '\n';
 }
