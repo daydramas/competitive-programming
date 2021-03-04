@@ -13,7 +13,9 @@ using namespace std;
 
 #define N (1 << 18) // 2e5
 
-bool digit(char c) { return (c >= '0' && c <= '9'); }
+bool digit(char c) {
+	return (c >= '0' && c <= '9');
+}
 string tobase26(int n) {
 	string ret = "";
 	while (1) {

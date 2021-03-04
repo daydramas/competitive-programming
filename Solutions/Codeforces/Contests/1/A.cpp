@@ -4,13 +4,8 @@
  * Created on 2021-02-17
  */
 
-#include <algorithm>
 #include <iostream>
-#include <string>
-#include <vector>
 using namespace std;
-
-#define N (1 << 18) // 2e5
 
 long long cdiv(long long a, long long b) {
 	return (a / b + (a % b ? 1 : 0));
