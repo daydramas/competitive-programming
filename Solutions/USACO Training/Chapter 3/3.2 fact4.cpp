@@ -28,9 +28,13 @@ int main() {
 
 	// main
 	long long fact = 1;
+	long long t, f;
+	t = f = 0;
 	for (int i=2; i<=N; i++) {
-		fact = (fact*i) % MOD;
-		if (fact % 10 == 0) fact /= 10;
+		int _i = i;
+		while(_i % 10 == 0) _i /= 10;
+		fact = fact*_i;
+		while (fact % 10 == 0) fact /= 10;
 	}
 	// output
 	while (fact % 10 == 0) fact /= 10;
