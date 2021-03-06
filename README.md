@@ -1,8 +1,8 @@
 # Competitive Programming
 
-- AtCoder ([link](https://atcoder.jp/))
-- Codeforces ([link](http://codeforces.com/))
-- CSES ([link](https://cses.fi/problemset/))
-- LeetCode ([link](https://leetcode.com/))
-- USACO Contests ([link](http://usaco.org/))
-- USACO Training ([link](https://train.usaco.org/))
+- [AtCoder](./AtCoder) ([site](https://atcoder.jp/))
+- [Codeforces](./Codeforces) ([site](http://codeforces.com/))
+- [CSES Problemset](./CSES%20Problemset) ([site](https://cses.fi/problemset/))
+- [LeetCode](./LeetCode) ([site](https://leetcode.com/))
+- [USACO Contests](./USACO%20Contests) ([site](http://usaco.org/))
+- [USACO Training](USACO%20Training) ([site](https://train.usaco.org/))
