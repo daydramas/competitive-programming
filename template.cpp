@@ -10,8 +10,7 @@
 using namespace std;
 
 #define MOD	1000000007
-#define INF	1e9
-#define EPS	1e-9
+#define INF	1000000000
 #define N	100000
 
 int main() {
