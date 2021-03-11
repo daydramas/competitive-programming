@@ -9,14 +9,6 @@
 #include <vector>
 using namespace std;
 
-using ll = long long;
-using vi = vector<int>;
-using pi = pair<int, int>;
-
-#define f         first
-#define s        second
-#define pb    push_back
-
 #define sz(x)                     (x).size()
 #define all(x)              begin(x), end(x)
 #define mem(a, x)    memset(a, x, sizeof(a))
