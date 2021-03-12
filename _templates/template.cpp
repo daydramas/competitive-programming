@@ -25,11 +25,11 @@ template <class T> bool ckmax(T& a, const T& b) { return (a < b ? a = b, 1 : 0);
 void read(double &x) { string s; cin >> s; x = stod(s); }
 void read(long double &x) { string s; cin >> s; x = stold(s); }
 template <class T> void read(T &x) { cin >> x; }
-template <class T, class... U> void read(T &x, U &...y) { read(x), read(y...); }
+template <class T, class... U> void read(T &x, U &...y) { read(x); read(y...); }
 template <class T> void write(const T &x) { cout << x; }
-template <class T, class... U> void write(T x, U... y) { write(x, y...); }
-template <class T> void print(T x) { write(x, '\n'); }
-template <class T, class... U> void print(T x, U... y) { write(x, ' '), print(y...); }
+template <class T, class... U> void write(const T &x, const U &...y) { write(x); write(y...); }
+template <class T> void print(const T &x) { write(x, "\n"); }
+template <class T, class... U> void print(const T &x, const U &...y) { write(x, " "); print(y...); }
 
 const int MOD = 1000000007;
 const int INF = 1000000000;
