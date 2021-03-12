@@ -7,6 +7,7 @@ template<int N> struct scc {
 		mem(scc, -1), mem(id, 0), mem(low, 0);
 		stack.clear(), sccs.clear();
 		time = 0;
+		#undef mem
 	}
 	
 	void add_edge(int x, int y) {

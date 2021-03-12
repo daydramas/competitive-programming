@@ -1,7 +1,7 @@
 template<int N> struct union_find {
 	int size[N], parent[N];
 
-	union_find() {
+	void init() {
 		for (int i = 0; i < N; ++i)
 			size[i] = 1, parent[i] = i;
 	}

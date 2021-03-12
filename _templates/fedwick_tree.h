@@ -4,11 +4,12 @@ template<class T, int N> struct fedwick_tree {
 	void init() {
 		#define mem(a, x) memset(a, x, sizeof(a))
 		mem(tree, 0);
+		#undef mem
 	}
 
 	T sum(int x) {
 		T ret = 0;
-		for (; ~x; x -= x & (-x))
+		for (; x > 0; x -= x & (-x))
 			ret += tree[x];
 		return ret;
 	}
