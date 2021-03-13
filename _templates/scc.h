@@ -1,11 +1,11 @@
 template<int N> struct scc {
-	int time, scc[N], id[N], low[N];
-	vector<int> adj[N], stack, sccs;
+	int time, comp[N], id[N], low[N];
+	vector<int> adj[N], stack, comps;
 
 	void init() {
 		#define mem(a, x) memset(a, x, sizeof(a))
-		mem(scc, -1), mem(id, 0), mem(low, 0);
-		stack.clear(), sccs.clear();
+		mem(comp, -1), mem(id, 0), mem(low, 0);
+		stack.clear(), comps.clear();
 		time = 0;
 		#undef mem
 	}
@@ -17,13 +17,13 @@ template<int N> struct scc {
 	int search(int x) {
 		low[x] = id[x] = ++time;
 		stack.push_back(x);
-		for (int y : adj[x]) if (scc[y] == -1) {
+		for (int y : adj[x]) if (comp[y] == -1) {
 			low[x] = min(low[x], id[y] ?: search(y));
 		}
 		if (low[x] == id[x]) {
-			sccs.push_back(x);
+			comps.push_back(x);
 			for (int y = -1; y != x;) {
-				scc[y = stack.back()] = x;
+				comp[y = stack.back()] = x;
 				stack.pop_back();
 			}
 		}
@@ -33,6 +33,6 @@ template<int N> struct scc {
 	void tarjan(int n) {
 		for (int i = 1; i <= n; ++i)
 			if (!id[i]) search(i);
-		reverse(begin(sccs), end(sccs));
+		reverse(begin(comps), end(comps));
 	}
 };
