@@ -1,10 +1,13 @@
-template<class T, int N> struct segment_tree {
+template<class T, int N, T id = 0> struct segment_tree {
 	T tree[N * 2];
 
+	T combine(const T& a, const T& b) {
+		return a + b;
+	}
+
 	void init() {
-		#define mem(a, x) memset(a, x, sizeof(a))
-		mem(tree, 0);
-		#undef mem
+		for (int i = 0; i < N * 2; ++i)
+			tree[i] = id;
 	}
 
 	void _update(int i, T x, int k, int l, int r) {
@@ -12,16 +15,16 @@ template<class T, int N> struct segment_tree {
 		int m = (l + r) / 2;
 		if (i <= m) _update(i, x, k * 2, l, m); 
 		else _update(i, x, k * 2 + 1, m + 1, r);
-		tree[k] = tree[k * 2] + tree[k * 2 + 1];
+		tree[k] = combine(tree[k * 2], tree[k * 2 + 1]);
 	}
 
 	T _query(int ql, int qr, int k, int l, int r) {
-		if (ql > r || qr < l) return 0;
+		if (ql > r || qr < l) return id;
 		if (ql <= l && qr >= r) return tree[k];
 		int m = (l + r) / 2;
 		T q1 = _query(ql, qr, k * 2, l, m);
 		T q2 = _query(ql, qr, k * 2 + 1, m + 1, r);
-		return q1 + q2;
+		return combine(q1, q2);
 	}
 
 	void update(int i, T x) {
