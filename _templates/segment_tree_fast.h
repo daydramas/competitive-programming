@@ -1,5 +1,5 @@
 template<class T> struct segment_tree {
-	int n; vector<int> tree; T id;
+	int n; vector<T> tree; T id;
 
 	T combine(const T& a, const T& b) {
 		return a + b;
