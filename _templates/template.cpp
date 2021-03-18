@@ -24,7 +24,7 @@ template <class T> void write(const T &x) { cout << x; }
 template <class T, class... U> void write(const T &x, const U &...y) { write(x); write(y...); }
 template <class T> void print(const T &x) { write(x, "\n"); }
 template <class T, class... U> void print(const T &x, const U &...y) { write(x, " "); print(y...); }
-template <class T> void DBG(const T& t) { cerr << t << endl; }
+template <class T> void DBG(const T& t) { cerr << t << "]" << endl; }
 template <class T, class... U> void DBG(const T& t, const U&... u) { cerr << t << ' '; DBG(u...); }
 #define error(...) cerr << "Line(" << __LINE__ << ") -> [" << #__VA_ARGS__ << "]: [", DBG(__VA_ARGS__)
 
