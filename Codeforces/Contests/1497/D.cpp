@@ -42,5 +42,19 @@ int main() {
 		int tag[n], s[n];
 		F0R(i, n) read(tag[i]);
 		F0R(j, n) read(s[j]);
+		long long dp[n];
+		mem(dp, 0);
+		for (int j = 0; j < n; ++j)
+			for (int i = j - 1; i >= 0; --i) 
+				if (tag[i] != tag[j]) {
+					long long x = dp[i], y = dp[j];
+					long long d = abs(s[i] - s[j]);
+					ckmax(dp[i], y + d);
+					ckmax(dp[j], x + d);
+				}
+		long long ans = 0;
+		F0R(i, n)
+			ckmax(ans, dp[i]);
+		print(ans);
 	}
 }
