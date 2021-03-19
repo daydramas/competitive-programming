@@ -12,8 +12,10 @@ template<class T, int N, T id = 0> struct lazy_segment_tree {
 
 	void push(int k, int l, int r) {
 		tree[k] += (r - l + 1) * lazy[k];
-		lazy[k * 2] += lazy[k];  
-		lazy[k * 2 + 1] += lazy[k];
+		if (l != r) {
+			lazy[k * 2] += lazy[k];
+			lazy[k * 2 + 1] += lazy[k];
+		}
 		lazy[k] = 0;
 	}
 
