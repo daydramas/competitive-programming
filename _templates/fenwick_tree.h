@@ -1,4 +1,4 @@
-template<class T, int N> struct fedwick_tree {
+template<class T, int N> struct fenwick_tree {
 	T tree[N];
 
 	void init() {
