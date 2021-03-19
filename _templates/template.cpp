@@ -19,6 +19,7 @@ using namespace std;
 template <class T> bool ckmin(T& a, const T& b) { return (a > b ? a = b, 1 : 0); }
 template <class T> bool ckmax(T& a, const T& b) { return (a < b ? a = b, 1 : 0); }
 template <class T> void read(T &x) { cin >> x; }
+template <class T = int> T read() { T x; read(x); return x; }
 template <class T, class... U> void read(T &x, U &...y) { read(x); read(y...); }
 template <class T> void write(const T &x) { cout << x; }
 template <class T, class... U> void write(const T &x, const U &...y) { write(x); write(y...); }
