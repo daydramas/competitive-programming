@@ -11,7 +11,7 @@
 ## `.zshrc`
 
 ```
-co() { g++ -std=c++11 -o "${1%.*}" $1 -Wall -DLOCAL; }
+co() { g++ -std=c++17 -o "${1%.*}" $1 -Wall -DLOCAL; }
 run() { co $1 && ./${1%.*} & fg; }
 ```
 
