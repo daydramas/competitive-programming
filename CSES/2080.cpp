@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 const int N = 69;
 
 struct L {
@@ -12,7 +15,7 @@ void link(int i, int j) {
 	aa[i] = l;
 };
 
-int ss[N]; bool vv[N];
+int n, k, ss[N]; bool vv[N];
 
 int subtree(int x, int p) {
 	ss[x] = 1;
@@ -36,4 +39,15 @@ void decomp(int x) {
 	for (L *y = aa[x]; y; y = y->next)
 		if (!vv[y->x])
 			decomp(y->x);
+}
+
+int main() {
+	cin.tie(0)->sync_with_stdio(0);
+
+	cin >> n >> k;
+	for (int i = 1, x, y; i < n; ++i) {
+		cin >> x >> y;
+		link(x, y), link(y, x);
+	}
+	decomp(1);
 }
