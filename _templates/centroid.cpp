@@ -33,7 +33,7 @@ void decomp(int x) {
 	int c = centroid(subtree(x, 0) / 2, x, 0);
 	vv[c] = 1;
 	// do whatever you gotta do :D
-	for (L *y = aa[x]; y; y = y->next)
+	for (L *y = aa[c]; y; y = y->next)
 		if (!vv[y->x])
 			decomp(y->x);
 }
