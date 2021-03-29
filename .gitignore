@@ -28,3 +28,7 @@ Other
 .catalyst
 
 Codeforces/EDU
+
+# other
+*.py
+*.c
