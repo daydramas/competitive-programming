@@ -15,9 +15,26 @@ void link(int i, int j) {
 	aa[i] = l;
 };
 
-int n, k, ss[N], dep, cc[N]{1};
+int n, k1, k2, ss[N], dep, cc[N], bit[N];
 bool vv[N];
 long long ans = 0;
+
+int query(int i) {
+	int ans = 0; ++i;
+	while (i > 0) {
+		ans += bit[i];
+		i -= i & (-i);
+	}
+	return ans;
+}
+
+void update(int i, int x) {
+	++i;
+	while (i < N) {
+		bit[i] += x;
+		i += i & (-i);
+	}
+}
 
 int subtree(int x, int p = 0) {
 	ss[x] = 1;
@@ -35,17 +52,17 @@ int centroid(int dd, int x, int p = 0) {
 }
 
 void _count(int x, int p, int d = 1) {
-	if (d > k) return;
+	if (d > k2) return;
 	dep = max(dep, d);
-	ans += cc[k - d];
+	ans += query(k2 - d) - query(k1 - d - 1);
 	for (L *y = aa[x]; y; y = y->next)
 		if (!vv[y->x] && y->x != p)
 			_count(y->x, x, d + 1);
 }
 
 void _fill(int x, int p, int d = 1) {
-	if (d > k) return;
-	cc[d]++;
+	if (d > k2) return;
+	cc[d]++; update(d, 1);
 	for (L *y = aa[x]; y; y = y->next)
 		if (!vv[y->x] && y->x != p)
 			_fill(y->x, x, d + 1);
@@ -60,7 +77,8 @@ void decomp(int x = 1) {
 			_count(y->x, c);
 			_fill(y->x, c);
 		}
-	fill(cc + 1, cc + dep + 1, 0);
+	for (int i = 1; i <= dep; ++i)
+		update(i, -cc[i]), cc[i] = 0;
 	for (L *y = aa[c]; y; y = y->next)
 		if (!vv[y->x])
 			decomp(y->x);
@@ -69,7 +87,8 @@ void decomp(int x = 1) {
 int main() {
 	cin.tie(0)->sync_with_stdio(0);
 
-	cin >> n >> k;
+	cin >> n >> k1 >> k2;
+	update(0, 1);
 	for (int i = 1, x, y; i < n; ++i) {
 		cin >> x >> y;
 		link(x, y), link(y, x);
