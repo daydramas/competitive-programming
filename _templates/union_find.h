@@ -1,21 +1,5 @@
-template<int N> struct union_find {
-	int size[N], parent[N];
+int dd[N];
+// memset(dd, -1, sizeof(dd));
 
-	void init() {
-		for (int i = 0; i < N; ++i)
-			size[i] = 1, parent[i] = i;
-	}
-
-	int find(int x) {
-		if (parent[x] == x) return x;
-		return parent[x] = find(parent[x]);
-	}
-
-	bool merge(int x, int y) {
-		x = find(x), y = find(y);
-		if (x == y) return false;
-		parent[y] = x;
-		size[x] += size[y];
-		return true;
-	}
-};
+int get(int x) { return dd[x] < 0 ? x : dd[x] = get(dd[x]); }
+void merge(int x, int y) { x = get(x), y = get(y); if (x != y) dd[x] += dd[y], dd[y] = x; }

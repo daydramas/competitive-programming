@@ -9,9 +9,3 @@ void link(int i, int j) {
 	l->next = aa[i];
 	aa[i] = l;
 };
-
-/* usage
-for (L* j = aa[x]; j; j = j->next) {
-
-}
-*/
