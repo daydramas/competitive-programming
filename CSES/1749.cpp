@@ -9,19 +9,18 @@ int n, a[N];
 int tt[S << 1];
 
 void build(int k, int l, int r) {
-	if (l == r) { tt[k] = 1; return; }
+	tt[k] = r - l + 1;
+	if (l == r) { return; }
 	int m = (l + r) >> 1;
 	build(k << 1, l, m);
 	build(k << 1 | 1, m + 1, r);
-	tt[k] = tt[k << 1] + tt[k << 1 | 1];
 }
 int query(int x, int k, int l, int r) {
-	if (l == r) { return tt[k] = 0, l; }
-	int m = (l + r) >> 1, p;
-	if (x <= tt[k << 1]) p = query(x, k << 1, l, m); 
-	else p = query(x - tt[k << 1], k << 1 | 1, m + 1, r);
-	tt[k] = tt[k << 1] + tt[k << 1 | 1];
-	return p;
+	tt[k]--;
+	if (l == r) { return l; }
+	int m = (l + r) >> 1;
+	if (x <= tt[k << 1]) return query(x, k << 1, l, m); 
+	else return query(x - tt[k << 1], k << 1 | 1, m + 1, r);
 }
 
 int main() {

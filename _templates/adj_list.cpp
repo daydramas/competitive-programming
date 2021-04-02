@@ -1,11 +1,9 @@
 struct L {
-	int x;
-	L *next;
+	int x; L *next;
+	L(int x, =L *next) : x(x), =next(next) {}
 } *aa[N];
 
 void link(int i, int j) {
-	L *l = new L();
-	l->x = j;
-	l->next = aa[i];
+	L *l = new L(j, aa[i]);
 	aa[i] = l;
 };
