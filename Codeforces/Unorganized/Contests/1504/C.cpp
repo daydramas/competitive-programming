@@ -19,7 +19,7 @@ int main() {
 			} else { // dif	
 				if (!ab) a += '(', b += ')', ab++, bb--;
 				else if (!bb) a += ')', b += '(', ab--, bb++;
-				else if (ab > bb) a += ')', b += '(', ab--, bb++;
+				else if (ab >= bb) a += ')', b += '(', ab--, bb++;
 				else a += ')', b += '(', ab--, bb++;
 			}
 			if (ab < 0 || bb < 0) ok = 0;
