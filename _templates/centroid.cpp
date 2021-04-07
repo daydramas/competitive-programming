@@ -1,39 +1,33 @@
-const int N = 69;
-
-struct L {
-	int x;
-	L *next;
-} *aa[N];
-
-void link(int i, int j) {
-	L *l = new L();
-	l->x = j;
-	l->next = aa[i];
-	aa[i] = l;
-};
-
-int ss[N]; bool vv[N];
-
-int subtree(int x, int p) {
+int hd[N], nx[M], to[M], ei = 0;
+ 
+inline void link(int i, int j) {
+	nx[++ei] = hd[i], hd[i] = ei, to[ei] = j;
+}
+ 
+int n, k, ss[N];
+bool vv[N];
+ 
+int subtree(int x, int p = 0) {
 	ss[x] = 1;
-	for (L *y = aa[x]; y; y = y->next)
-		if (!vv[y->x] && y->x != p)
+	for (int j = hd[x], y; j; j = nx[j])
+		if (!vv[y = to[j]] && y != p)
 			ss[x] += subtree(y, x);
 	return ss[x];
 }
-
-int centroid(int dd, int x, int p) {
-	for (L *y = aa[x]; y; y = y->next)
-		if (!vv[y->x] && y->x != p && ss[y->x] >= dd)
-			return centroid(dd, y->x, x);
+ 
+int centroid(int dd, int x, int p = 0) {
+	for (int j = hd[x], y; j; j = nx[j])
+		if (!vv[y = to[j]] && y != p && ss[y] > dd)
+			return centroid(dd, y, x);
 	return x;
 }
-
-void decomp(int x) {
-	int c = centroid(subtree(x, 0) / 2, x, 0);
+ 
+void decomp(int x = 1) {
+	int c = centroid(subtree(x) / 2, x);
+	// do smth
 	vv[c] = 1;
-	// do whatever you gotta do :D
-	for (L *y = aa[c]; y; y = y->next)
-		if (!vv[y->x])
-			decomp(y->x);
+	for (int j = hd[c], y; j; j = nx[j])
+		if (!vv[y = to[j]])
+			decomp(y);
 }
+ 
