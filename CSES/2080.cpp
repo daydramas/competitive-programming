@@ -1,19 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 200001;
+const int N = 200010;
+const int M = 2 * N;
 
-struct L {
-	int x;
-	L *next;
-} *aa[N];
+int hd[N], nx[M], to[M], ei = 0;
 
-void link(int i, int j) {
-	L *l = new L();
-	l->x = j;
-	l->next = aa[i];
-	aa[i] = l;
-};
+inline void link(int i, int j) {
+	nx[++ei] = hd[i], hd[i] = ei, to[ei] = j;
+}
 
 int n, k, ss[N], dep, cc[N]{1};
 bool vv[N];
@@ -21,16 +16,16 @@ long long ans = 0;
 
 int subtree(int x, int p = 0) {
 	ss[x] = 1;
-	for (L *y = aa[x]; y; y = y->next)
-		if (!vv[y->x] && y->x != p)
-			ss[x] += subtree(y->x, x);
+	for (int j = hd[x], y; j; j = nx[j])
+		if (!vv[y = to[j]] && y != p)
+			ss[x] += subtree(y, x);
 	return ss[x];
 }
 
 int centroid(int dd, int x, int p = 0) {
-	for (L *y = aa[x]; y; y = y->next)
-		if (!vv[y->x] && y->x != p && ss[y->x] >= dd)
-			return centroid(dd, y->x, x);
+	for (int j = hd[x], y; j; j = nx[j])
+		if (!vv[y = to[j]] && y != p && ss[y] >= dd)
+			return centroid(dd, y, x);
 	return x;
 }
 
@@ -38,42 +33,40 @@ void _count(int x, int p, int d = 1) {
 	if (d > k) return;
 	dep = max(dep, d);
 	ans += cc[k - d];
-	for (L *y = aa[x]; y; y = y->next)
-		if (!vv[y->x] && y->x != p)
-			_count(y->x, x, d + 1);
+	for (int j = hd[x], y; j; j = nx[j])
+		if (!vv[y = to[j]] && y != p)
+			_count(y, x, d + 1);
 }
 
 void _fill(int x, int p, int d = 1) {
 	if (d > k) return;
 	cc[d]++;
-	for (L *y = aa[x]; y; y = y->next)
-		if (!vv[y->x] && y->x != p)
-			_fill(y->x, x, d + 1);
+	for (int j = hd[x], y; j; j = nx[j])
+		if (!vv[y = to[j]] && y != p)
+			_fill(y, x, d + 1);
 }
 
 void decomp(int x = 1) {
 	int c = centroid(subtree(x) / 2, x);
 	vv[c] = 1;
 	dep = 0;
-	for (L *y = aa[c]; y; y = y->next)
-		if (!vv[y->x]) {
-			_count(y->x, c);
-			_fill(y->x, c);
+	for (int j = hd[c], y; j; j = nx[j])
+		if (!vv[y = to[j]]) {
+			_count(y, c);
+			_fill(y, c);
 		}
 	fill(cc + 1, cc + dep + 1, 0);
-	for (L *y = aa[c]; y; y = y->next)
-		if (!vv[y->x])
-			decomp(y->x);
+	for (int j = hd[c], y; j; j = nx[j])
+		if (!vv[y = to[j]])
+			decomp(y);
 }
 
 int main() {
-	cin.tie(0)->sync_with_stdio(0);
-
-	cin >> n >> k;
+	scanf("%d%d", &n, &k);
 	for (int i = 1, x, y; i < n; ++i) {
-		cin >> x >> y;
+		scanf("%d%d", &x, &y);
 		link(x, y), link(y, x);
 	}
 	decomp();
-	cout << ans << '\n';
+	printf("%lld\n", ans);
 }

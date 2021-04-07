@@ -1,15 +1,5 @@
-int hd[N], nx[M], to[M], ei = 0;
+int hh[N], nn[M], tt[M], ei = 0;
 
 inline void link(int i, int j) {
-	nx[++ei] = hd[i], hd[i] = ei, to[ei] = j;
+	nn[++ei] = hh[i], hh[i] = ei, tt[ei] = j;
 }
-
-/*
-
-usage
-
-for (int j = hd[x], y; j; j = nx[j]) {
-	y = to[j];
-}
-
-*/
