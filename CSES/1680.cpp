@@ -2,18 +2,13 @@
 using namespace std;
 
 const int N = 100010;
+const int M = 2 * N;
 
-struct L {
-	int x;
-	L *next;
-} *aa[N];
+int hh[N], nn[M], tt[M], ei = 0;
 
-void link(int i, int j) {
-	L *l = new L();
-	l->x = j;
-	l->next = aa[i];
-	aa[i] = l;
-};
+inline void link(int i, int j) {
+	nn[++ei] = hh[i], hh[i] = ei, tt[ei] = j;
+}
 
 int n, m, dp[N], pp[N];
 bool vv[N];
@@ -21,10 +16,10 @@ bool vv[N];
 int DP(int x) {
 	if (vv[x]) return dp[x];
 	if (x == 1) dp[x] = 1;
-	for (L *j = aa[x]; j; j = j->next) {
-		if (DP(j->x) + 1 > dp[x]) {
-			dp[x] = dp[j->x] + 1;
-			pp[x] = j->x;
+	for (int j = hh[x]; j; j = nn[j]) {
+		if (DP(tt[j]) + 1 > dp[x]) {
+			dp[x] = dp[tt[j]] + 1;
+			pp[x] = tt[j];
 		}
 	}
 	return vv[x] = 1, dp[x];
