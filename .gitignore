@@ -9,6 +9,10 @@
 
 !*.c
 
+# LICENSE
+
+!LICENSE
+
 # MacOS Files
 .DS_Store
 
@@ -34,3 +38,4 @@ Codeforces/EDU
 # other
 LeetCode/*.py
 LeetCode/*.c
+USACO/
